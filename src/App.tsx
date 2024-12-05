@@ -13,7 +13,7 @@ function App() {
     <Wrapper>
       <Header />
       <Title />
-      <Navbar />
+      {/* <Navbar /> */}
       <Content />
       <ScrollToTopButton />
       <Footer />

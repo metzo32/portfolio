@@ -1,29 +1,36 @@
-import Section from "../components/Section";
+import { useRef } from "react";
+import Navbar from "./Navbar";
+import Section from "./Section";
 import AboutMe from "./AboutMeComponent/AboutMe";
-// import HardSkillsComponent from "./HardSkillsComponent/HardSkillsComponent";
 import HardSkills from "./HardSkillsComponent/HardSkills";
 import SoftSkillsComponent from "./SoftSkillsComponent/SoftSkillsComponent";
 import ProjectGrid from "../components/ProjectComponent/ProjectGrid";
 import Contact from "../components/ContactComponent/Contact";
 
 export default function Content() {
+  
   const sectionData = [
-    {children: <AboutMe />, title: "About Me", text: ""},
-    {children: <HardSkills />, title: "Hard Skills", text: ""},
-    {children: <SoftSkillsComponent />, title: "Soft Skills", text: ""},
-    {children: <ProjectGrid />, title: "Projects", text: "텍스트 설명"},
-    {children: <Contact />, title: "Contact", text: "텍스트 설명"},
-  ]
+    { children: <AboutMe />, title: "About Me", text: "", ref: useRef<HTMLDivElement>(null) },
+    { children: <HardSkills />, title: "Hard Skills", text: "", ref: useRef<HTMLDivElement>(null) },
+    { children: <SoftSkillsComponent />, title: "Soft Skills", text: "", ref: useRef<HTMLDivElement>(null) },
+    { children: <ProjectGrid />, title: "Projects", text: "텍스트 설명", ref: useRef<HTMLDivElement>(null) },
+    { children: <Contact />, title: "Contact", text: "텍스트 설명", ref: useRef<HTMLDivElement>(null) },
+  ];
+
+  const sectionRefs = sectionData.map((data) => data.ref);
+
 
   return (
     <>
-      {sectionData.map((data, index)=>(
+      <Navbar sectionData={sectionData} sectionRefs={sectionRefs}/>
+      {sectionData.map((data, index) => (
         <Section
-        key={index}
-        children={data.children}
-        num={`0${index+1}`}
-        title={data.title}
-        text={data.text}
+          key={index}
+          children={data.children}
+          num={`0${index + 1}`}
+          title={data.title}
+          text={data.text}
+          ref={data.ref}
         />
       ))}
     </>
