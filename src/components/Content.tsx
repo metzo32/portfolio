@@ -1,7 +1,7 @@
 import Section from "../components/Section";
 import AboutMe from "./AboutMeComponent/AboutMe";
 // import HardSkillsComponent from "./HardSkillsComponent/HardSkillsComponent";
-import HardSkills from "./ContactComponent/HardSkillsComponent/HardSkills";
+import HardSkills from "./HardSkillsComponent/HardSkills";
 import SoftSkillsComponent from "./SoftSkillsComponent/SoftSkillsComponent";
 import ProjectGrid from "../components/ProjectComponent/ProjectGrid";
 import Contact from "../components/ContactComponent/Contact";

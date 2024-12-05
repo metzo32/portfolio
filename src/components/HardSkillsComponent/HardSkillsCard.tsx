@@ -14,7 +14,7 @@ export default function HardSkillsCard({
     <div>
       <ul>
         <li className="flex mb-5">
-          <div className="skill-image-container bg-pink-400 mr-5">
+          <div className="skill-image-container">
             <img src={logo} alt={logo} />
           </div>
           <div className="flex flex-col">

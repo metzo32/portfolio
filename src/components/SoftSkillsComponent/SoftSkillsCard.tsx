@@ -1,4 +1,4 @@
-import { useState } from "react"
+// import { useState } from "react"
 
 interface SoftSkillsCardProps {
   num: string;
@@ -8,7 +8,7 @@ interface SoftSkillsCardProps {
 }
 
 export default function SoftSkillsCard({num, image, title, text}: SoftSkillsCardProps) {
-    const [isSelected, setIsSelected] = useState(false)
+    // const [isSelected, setIsSelected] = useState(false)
 
     // const handleClick = () => {
     //     setIsSelected(!isSelected)
@@ -23,7 +23,7 @@ export default function SoftSkillsCard({num, image, title, text}: SoftSkillsCard
             <p className="small-p">{text}</p>
             {/* <button onClick={handleClick} className="button-strong">버튼</button> */}
         </div>
-        <span className={`card-deact ${isSelected ? "card-active" : ""}`}/>
+        {/* <span className={`card-deact ${isSelected ? "card-active" : ""}`}/> */}
     </div>
   )
 }

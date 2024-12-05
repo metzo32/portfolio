@@ -42,10 +42,11 @@ export default function HardSkills() {
       </ul>
 
       <div className={`w-long py-2 ml-16 ${showCard ? "block" : "invisible"}`}>
-        <h5 className="mb-5">
-          Skill Stack in
-          <span className="skills-strong"> {selectedCategory}</span>
+        <h5 className="mb-2">
+          Skill Stack in 
+          <span className="skills-strong"> [ {selectedCategory} ]</span>
         </h5>
+        <div className="block w-full h-[2px] bg-disabled mb-10"/>
         {selectedCards.map((card) => (
           <HardSkillsCard
             key={card.title}

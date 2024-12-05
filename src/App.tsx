@@ -4,8 +4,9 @@ import Header from "./components/Header";
 import Title from "./components/Title";
 import Navbar from "./components/Navbar";
 import Content from "./components/Content";
-import Footer from "./components/Footer";
+import NameTag from "./components/NameTag";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Content />
       <ScrollToTopButton />
       <Footer />
+      <NameTag/>
     </Wrapper>
   );
 }

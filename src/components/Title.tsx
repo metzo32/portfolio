@@ -5,6 +5,11 @@ import { IoMdMail } from "react-icons/io";
 import profileImage from "../assets/images/profile_green.png";
 
 export default function Title() {
+  const handleMailClick = () => {
+    const email = atob("bWV0em8zMjMyQGdtYWlsLmNvbQo"); 
+    window.location.href = `mailto:${email}`;
+  };
+
   return (
     <div className="title-wrapper">
       <div className="title-container">
@@ -32,18 +37,30 @@ export default function Title() {
         </button>
 
         <div className="icons-box">
-          <FaGithub className="icons" />
-          <FaStickyNote className="icons" />
-          <IoMdMail className="icons" />
+          <a
+            href="https://github.com/metzo32"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub className="icons" />
+          </a>
+          <a
+            href="https://metz.tistory.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaStickyNote className="icons" />
+          </a>
+          <IoMdMail onClick={handleMailClick} className="icons" />
         </div>
       </div>
-      {/* <div className="title-image-container ">
+      <div className="title-image-container ">
         <img
           src={profileImage}
           alt="profile image"
           className=" mix-blend-lighten"
         />
-      </div> */}
+      </div>
     </div>
   );
 }

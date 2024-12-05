@@ -168,7 +168,7 @@
     .wrapper {
         @apply 
         min-w-[320px]
-        px-16 py-28 bg-background
+        px-16 pt-28 bg-background
 
         md:px-24
         lg:px-48
@@ -373,8 +373,9 @@
 
     .skill-image-container {
         @apply
-        w-[100px] h-[100px]
-        rounded-full 
+        w-[100px] h-[100px] p-3 mr-5
+        bg-surface
+        /* border-2 border-success */
         flex justify-center items-center
         flex-shrink-0
     }
