@@ -34,11 +34,17 @@
     }
 
     h2 {
-        @apply text-4xl
+        @apply text-2xl
+
+        md:text-3xl
+        lg:text-4xl
     }
 
     h3 {
         @apply font-light
+        text-lg
+
+        md:text-xl
     }
 
     h4 {
@@ -158,6 +164,15 @@
 
         hover:text-surface
     }
+
+    .skill-icons {
+        @apply 
+       m-16
+        text-6xl
+        fill-success
+        cursor-pointer
+        transition-all duration-200 ease-in-out
+    }
 }
 
 @layer utilities {
@@ -168,21 +183,28 @@
     .wrapper {
         @apply 
         min-w-[320px]
-        px-16 pt-28 bg-background
+        px-16 pt-20 bg-background
 
-        md:px-24
+        md:px-24 md:pt-28
         lg:px-48
     }
 
     .wrapper-blur {
         @apply
-        w-screen h-[150px] -ml-20 scale-125
+        w-screen h-[80px] -ml-20 scale-125
         fixed top-0 transform -translate-y-1/2 z-20
         bg-shadow 
         blur-xl
 
-        md:-ml-24
+        md:-ml-24 md:h-[150px]
         lg:-ml-48
+    }
+
+    .header-wrapper {
+        @apply
+        w-full
+        flex justify-between items-center
+        select-none
     }
 
     .title-wrapper {
@@ -194,12 +216,14 @@
 
     .title-container {
         @apply
-        w-1/2
+        w-full
+
+        md:w-1/2
     }
 
     .section-wrapper {
         @apply
-        w-full pt-36 pb-96
+        w-full pt-36 pb-[1000px]
     }
 
     .section-title-container {
@@ -214,7 +238,11 @@
 
     .title-name {
         @apply
-        text-success text-8xl
+        text-success 
+        text-5xl
+
+        md:text-6xl
+        lg:text-8xl
     }
 
     .name-container {
@@ -222,14 +250,26 @@
         flex mb-3
     }
 
+    .name-tag {
+        @apply
+        w-[100px] py-10
+        origin-left -rotate-90 
+        sticky bottom-0 left-0 transition-transform -translate-x-[140px] 
+        duration-300 ease-in-out
+        select-none
+    }
+
     .title-strong {
         @apply
-        text-4xl text-tertiary
+        text-2xl text-tertiary
+
+        md:text-3xl
+        lg:text-4xl
     }
 
     .icons-box {
         @apply
-        w-[20%] my-12
+        w-[140px] my-12
         flex justify-between items-center 
     }
 
@@ -238,33 +278,57 @@
         w-[1000px] h-[1000px] 
         absolute bottom-0 right-0 transform translate-x-48 translate-y-1/4 -z-10 
         bg-background 
+        select-none
         opacity-10
         pointer-events-none
     }
 
+    .soft-card-wrapper {
+        @apply
+        w-full grid gap-5
+        grid-cols-1
+
+        md:grid-cols-2 md:grid-rows-2
+        lg:grid-cols-4 lg:grid-rows-1
+    }
+
     .soft-card-container {
-        @apply w-[300px] h-[500px] pt-6
+        @apply 
+        w-full pt-6
         flex flex-col justify-between items-center
         bg-surface
         shadow-xl
+        cursor-pointer select-none
         origin-bottom
-
         transition-all duration-200 ease-in-out
 
         hover:scale-110
+        hover:shadow-xl
+
+        md:aspect-golden-reverse
+    }
+
+    .soft-card-container.deactive {
+        @apply
+        grayscale-[50%]
+        brightness-50
+        opacity-50
+
+        hover:opacity-100
+        hover:brightness-75
     }
 
     .soft-card-box {
         @apply w-full h-full px-8
-        flex flex-col justify-between items-center
+        flex flex-col items-center
     }
 
     .card-deact {
-        @apply w-full h-4 mt-8 block bg-disabled
+        @apply w-full h-4 mt-8 block bg-accent
     }
 
-    .card-deact.card-active {
-        @apply bg-accent
+    .card-deact.card-deactive {
+        @apply bg-disabled
     }
 
     .project-grid {

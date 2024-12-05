@@ -3,8 +3,8 @@ import Navbar from "./Navbar";
 import Section from "./Section";
 import AboutMe from "./AboutMeComponent/AboutMe";
 import HardSkills from "./HardSkillsComponent/HardSkills";
-import SoftSkillsComponent from "./SoftSkillsComponent/SoftSkillsComponent";
-import ProjectGrid from "../components/ProjectComponent/ProjectGrid";
+import SoftSkills from "./SoftSkillsComponent/SoftSkills";
+import Project from "./ProjectComponent/Project";
 import Contact from "../components/ContactComponent/Contact";
 
 export default function Content() {
@@ -12,8 +12,8 @@ export default function Content() {
   const sectionData = [
     { children: <AboutMe />, title: "About Me", text: "", ref: useRef<HTMLDivElement>(null) },
     { children: <HardSkills />, title: "Hard Skills", text: "", ref: useRef<HTMLDivElement>(null) },
-    { children: <SoftSkillsComponent />, title: "Soft Skills", text: "", ref: useRef<HTMLDivElement>(null) },
-    { children: <ProjectGrid />, title: "Projects", text: "텍스트 설명", ref: useRef<HTMLDivElement>(null) },
+    { children: <SoftSkills />, title: "Soft Skills", text: "", ref: useRef<HTMLDivElement>(null) },
+    { children: <Project />, title: "Projects", text: "텍스트 설명", ref: useRef<HTMLDivElement>(null) },
     { children: <Contact />, title: "Contact", text: "텍스트 설명", ref: useRef<HTMLDivElement>(null) },
   ];
 

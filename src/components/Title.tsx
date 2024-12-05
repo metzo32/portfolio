@@ -26,7 +26,7 @@ export default function Title() {
           Frontend Engineer
         </h2>
         <h3 className="my-12">
-          Typescript를 기반으로 작업하는 신입 프론트엔드 개발자입니다.
+          Typescript를 기반으로 작업하는 프론트엔드 개발자입니다.
           <br />
           적극적인 팀워크와 꾸준한 학습을 지향합니다.
         </h3>

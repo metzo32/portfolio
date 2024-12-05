@@ -2,28 +2,28 @@ import { useState } from "react"
 
 interface SoftSkillsCardProps {
   num: string;
-  image: string;
+  image: JSX.Element;
   title: string;
   text: string;
+  initialSelected: boolean;
 }
 
-export default function SoftSkillsCard({num, image, title, text}: SoftSkillsCardProps) {
-    const [isSelected, setIsSelected] = useState(false)
+export default function SoftSkillsCard({num, image, title, text, initialSelected}: SoftSkillsCardProps) {
+    const [isSelected, setIsSelected] = useState(initialSelected)
 
-    // const handleClick = () => {
-    //     setIsSelected(!isSelected)
-    // }
+    const handleClick = () => {
+        setIsSelected(!isSelected)
+    }
 
   return (
-    <div className={`soft-card-container ${isSelected ? "active" : ""}`}>
+    <div className={`soft-card-container ${isSelected ? "" : "deactive"}`} onClick={handleClick}>
         <div className="soft-card-box">
             <h6 className="w-full">{num}</h6>
-            <img src={image} alt={image} className="w-1/2 aspect-square bg-purple-300 rounded-full"/>
-            <h5>{title}</h5>
-            <p className="small-p">{text}</p>
-            {/* <button onClick={handleClick} className="button-strong">버튼</button> */}
+            {image}
+            <h5 className={`${isSelected ? "" : "invisible"}`}>{title}</h5>
+            <p className={`small-p ${isSelected ? "" : "invisible"}`}>{text}</p>
         </div>
-        {/* <span className={`card-deact ${isSelected ? "card-active" : ""}`}/> */}
+        <span className={`card-deact ${isSelected ? "" : "card-deactive"}`}/>
     </div>
   )
 }

@@ -23,7 +23,7 @@ export default function NameTag() {
 
   return (
     <div
-      className={`origin-left -rotate-90 w-[100px] py-10 sticky bottom-0 left-0 transition-transform -translate-x-[140px] duration-300 ease-in-out ${
+      className={`name-tag ${
         isVisible ? "translate-y-0" : "translate-y-[400%]"
       }`}
     >

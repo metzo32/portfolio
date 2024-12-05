@@ -1,7 +1,13 @@
+const goldenRatio = 1.618;
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      aspectRatio: {
+        golden: `${goldenRatio.toFixed(3)}/1`, // 1.618:1 비율
+        'golden-reverse': `1/${goldenRatio.toFixed(3)}`, // 역 황금비 (1:1.618)
+      },
       colors: {
         primary: '#242275',
         secondary: '#2E348A',

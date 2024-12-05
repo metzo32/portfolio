@@ -4,9 +4,9 @@ import HardSkillsCard from "./HardSkillsCard";
 import hardSkillsData from "./HardSkillsData";
 
 export default function HardSkills() {
-    const [selectedCategory, setSelectedCategory] = useState<string | null>(
-        hardSkillsData.length > 0 ? hardSkillsData[0].category : null
-      );
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(
+    hardSkillsData.length > 0 ? hardSkillsData[0].category : null
+  );
   const [showCard, setShowCard] = useState(true);
 
   const handleCategoryClick = (category: string) => {
@@ -43,10 +43,11 @@ export default function HardSkills() {
 
       <div className={`w-long py-2 ml-16 ${showCard ? "block" : "invisible"}`}>
         <h5 className="mb-2">
-          Skill Stack in 
+          Skill Stack in
           <span className="skills-strong"> [ {selectedCategory} ]</span>
         </h5>
-        <div className="block w-full h-[2px] bg-disabled mb-10"/>
+
+        <div className="block w-full h-[2px] bg-disabled mb-10" />
         {selectedCards.map((card) => (
           <HardSkillsCard
             key={card.title}
