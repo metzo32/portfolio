@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* Helvetica */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+@import '/src/styling/fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply font-korean
+        break-keep
+      }
+      
+      /* 한글에만 Pretendard 적용 */
+      *:lang(ko) {
+        @apply font-korean
+      }
+      
+      /* 알파벳에 Helvetica 적용 */
+      *:lang(en) {
+        @apply font-alphabet
+      }
+      
+
+    h1, h2, h3, h4, h5, h6, p, span, li, a, blockquote {
+        @apply leading-snug text-xl
+      }
+
+    h1 {
+        @apply text-7xl font-light
+    }
+
+    h2 {
+        @apply text-4xl
+    }
+
+    h3 {
+        @apply font-light
+    }
+
+    h4 {
+        @apply text-xl
+    }
+
+    h5 {
+        @apply font-bold
+    }
+
+    h6 {
+        @apply text-2xl
+    }
+
+    p {
+        @apply font-extralight
+    }
+
+    li {
+        @apply font-extralight
+    }
+
+    a {
+        @apply font-extralight
+    }
+}
+
+@layer components {
+    .line {
+        @apply 
+        w-full h-[3px] bg-secondary block my-5
+        relative
+    }
+
+    .line-blur {
+        @apply 
+        w-full h-[5px] bg-secondary block
+        filter blur-sm
+        absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+    }
+    
+    .skills {
+        @apply 
+        w-auto px-2 py-1 mr-5 text-center
+        border-2 border-textColor rounded-lg
+    }
+
+    .small-p {
+        @apply text-center text-base
+    }
+
+    .button-full {
+        @apply
+        px-5 py-2
+        flex justify-between items-center
+        border-2 border-textColor
+        bg-textColor
+        text-primary
+        transition-colors duration-200 ease-in-out
+        
+        hover:bg-opacity-10
+        hover:text-textColor
+    }
+
+    .button-light {
+        @apply
+        px-4 py-2
+        border border-transparent
+        transition-all duration-200 ease-in-out
+
+        hover:border-textColor
+        hover:border-opacity-50
+    }
+
+    .button-strong {
+        @apply
+        w-[70%] h-[50px]
+        bg-accent
+        transition-all duration-200 ease-in-out
+
+        hover:bg-accentHover
+    }
+
+    .button-list {
+        @apply
+        px-4 py-2
+        transition-all duration-200 ease-in-out
+
+        hover:text-success
+    }
+
+    .button-list.clicked {
+        @apply
+        text-success
+    }
+
+    .nav-menu-wrapper {
+        @apply
+        w-screen py-10 -mx-20 px-20
+        flex justify-end
+        sticky top-0 z-50
+
+        md:-mx-24 md:px-24
+        lg:-mx-48 lg:px-48
+    }
+    
+    .nav-menu-container {
+        @apply
+        w-long flex justify-between items-center
+    }
+
+    .icons {
+        @apply 
+        text-4xl
+        cursor-pointer
+        transition-all duration-200 ease-in-out
+
+        hover:text-surface
+    }
+}
+
+@layer utilities {
+    ::selection {
+        @apply bg-tertiary text-textColor
+      }
+
+    .wrapper {
+        @apply 
+        min-w-[320px]
+        px-16 py-28 bg-background
+
+        md:px-24
+        lg:px-48
+    }
+
+    .wrapper-blur {
+        @apply
+        w-screen h-[150px] -ml-20 scale-125
+        fixed top-0 transform -translate-y-1/2 z-20
+        bg-shadow 
+        blur-xl
+
+        md:-ml-24
+        lg:-ml-48
+    }
+
+    .title-wrapper {
+        @apply
+        w-full py-48
+        flex items-center
+        relative z-10
+    }
+
+    .title-container {
+        @apply
+        w-1/2
+    }
+
+    .section-wrapper {
+        @apply
+        w-full py-96
+    }
+
+    .section-title-container {
+        @apply
+        w-full flex justify-between items-center
+    }
+
+    .section-semi-title {
+        @apply
+        w-[240px] pt-3 border-t-2 border-white flex justify-end
+    }
+
+    .title-name {
+        @apply
+        text-success text-8xl
+    }
+
+    .name-container {
+        @apply
+        flex mb-3
+    }
+
+    .title-strong {
+        @apply
+        text-4xl text-tertiary
+    }
+
+    .icons-box {
+        @apply
+        w-[20%] my-12
+        flex justify-between items-center 
+    }
+
+    .title-image-container {
+        @apply
+        w-[1000px] h-[1000px] 
+        absolute bottom-0 right-0 transform translate-x-48 translate-y-1/4 -z-10 
+        bg-background 
+        opacity-10
+        pointer-events-none
+    }
+
+    .soft-card-container {
+        @apply w-[300px] h-[500px] pt-6
+        flex flex-col justify-between items-center
+        bg-surface
+        shadow-xl
+        origin-bottom
+
+        transition-all duration-200 ease-in-out
+
+        hover:scale-110
+
+    }
+
+    .soft-card-box {
+        @apply w-full h-full px-8
+        flex flex-col justify-between items-center
+    }
+
+    .card-deact {
+        @apply w-full h-4 mt-8 block bg-disabled
+    }
+
+    .card-deact.card-active {
+        @apply bg-accent
+    }
+
+    .project-grid {
+        @apply 
+        w-full
+        grid grid-cols-1 gap-x-12 gap-y-24
+        auto-rows-min
+
+        lg:grid-cols-2
+    }
+
+    .project-card-wrapper {
+        @apply
+        w-full
+        flex flex-col
+    }
+    
+    .project-card-container {
+        @apply 
+        w-full
+        flex justify-between
+    }
+
+    .skills-container {
+        @apply 
+        mt-8
+        flex flex-wrap items-center
+    }
+    
+    .skills-strong {
+        @apply
+        text-success
+    }
+
+    .contact-wrapper {
+        @apply w-full flex justify-end
+    }
+
+    .contact-container {
+        @apply 
+        w-[80%] py-24
+        bg-primary
+        flex flex-col items-end
+    }
+
+    .contact-content {
+        @apply
+        w-long h-[500px] relative 
+        flex flex-col justify-between
+    }
+
+    .contact-title {
+        @apply
+         bg-secondary px-16 py-10
+        flex justify-between
+    }
+
+    .contact-text {
+        @apply
+        w-full flex-1 px-16 pt-10
+        flex flex-col justify-between
+    }
+
+    .hard-card-wrapper {
+        @apply w-full flex justify-between px-24
+    }
+
+    .hard-card-line {
+        @apply w-[300px] h-[400px]
+        rounded-md
+        border-2 border-surface
+        relative
+    }
+
+    .hard-card-blur {
+        @apply 
+        w-[300px] h-[400px]
+        rounded-md
+        border-2 border-surface
+        filter blur-sm
+        absolute top-0 left-0
+    }
+
+    .hard-card-container {
+        @apply
+        w-full h-full p-10
+    }
+
+    .hard-title {
+        @apply
+        font-alphabetStrong
+        text-3xl text-tertiary mb-5
+        text-center
+    }
+
+    .hard-description {
+        @apply
+        font-bold mb-5
+    }
+
+    .hard-text {
+        @apply
+        text-base
+    }
+
+    .skill-image-container {
+        @apply
+        w-[100px] h-[100px]
+        rounded-full 
+        flex justify-center items-center
+        flex-shrink-0
+    }
+
+    .top-button {
+        @apply
+        fixed bottom-10 right-10
+        border-y border-success text-success p-3
+        transition
+        
+         hover:bg-success 
+         hover:bg-opacity-20
+    }
+}
