@@ -76,6 +76,11 @@
 
 @layer components {
 
+    .custom-trans {
+        @apply
+        transition-all duration-300 ease-in-out
+    }
+
     .hide-smallview {
         @apply
         hidden 
@@ -97,6 +102,11 @@
         absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
     }
 
+    .line-secondary {
+        @apply
+        block w-full h-[2px] bg-disabled mb-10
+    }
+
     .li-centered {
         @apply
         flex justify-center items-center
@@ -111,9 +121,11 @@
     
     .skills {
         @apply 
-        w-auto px-2 py-1 mr-3 mb-3 text-center
+        w-auto px-2 py-1 mr-3 my-1 text-center
         text-success
         border border-success
+
+        md:mb-0 md:my-3
     }
 
     .small-p {
@@ -127,7 +139,7 @@
         border-2 border-textColor
         bg-textColor
         text-primary
-        transition-colors duration-200 ease-in-out
+        custom-trans
         
         hover:bg-opacity-10
         hover:text-textColor
@@ -139,7 +151,7 @@
         text-base
         whitespace-nowrap
         border border-transparent
-        transition-all duration-200 ease-in-out
+        custom-trans
 
         hover:border-textColor
         hover:border-opacity-50
@@ -151,7 +163,7 @@
         @apply
         w-[70%] h-[50px]
         bg-accent
-        transition-all duration-200 ease-in-out
+        custom-trans
 
         hover:bg-accentHover
     }
@@ -167,7 +179,7 @@
     .button-list {
         @apply
         px-4 py-2
-        transition-all duration-200 ease-in-out
+        custom-trans
 
         hover:text-success
     }
@@ -215,7 +227,7 @@
         bg-background bg-opacity-50 
         flex justify-center items-center
         fixed top-10 right-10 z-50 
-        transition-all duration-300 ease-in-out
+        custom-trans
 
         hover:scale-110 
     }
@@ -224,7 +236,7 @@
         @apply 
         text-4xl
         cursor-pointer
-        transition-all duration-200 ease-in-out
+        custom-trans
 
         hover:text-surface
     }
@@ -233,7 +245,7 @@
         @apply 
         fill-success
         cursor-pointer
-        transition-all duration-200 ease-in-out
+        custom-trans
     }
 
     .soft-icon-box {
@@ -375,7 +387,7 @@
         shadow-xl
         cursor-pointer select-none
         origin-bottom
-        transition-all duration-200 ease-in-out
+        custom-trans
 
         hover:scale-110
         hover:shadow-xl
@@ -430,13 +442,15 @@
     .project-image-container {
         @apply
         w-full aspect-golden bg-blue-900
+        mb-5
 
         md:w-short md:aspect-golden
+        md:mb-0
     }
     
     .project-text-container {
         @apply
-        flex-1 mt-5 ml-0 flex flex-col items-start
+        flex-1  ml-0 flex flex-col items-start
 
         md:ml-10
     }
@@ -445,6 +459,8 @@
         @apply 
         mt-5
         flex flex-wrap items-center
+
+        md:mt-0
     }
     
     .skills-strong {
@@ -536,7 +552,7 @@
         @apply
         fixed bottom-10 right-10
         border-y border-success text-success p-3
-        transition
+        custom-trans
         
          hover:bg-success 
          hover:bg-opacity-20

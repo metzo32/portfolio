@@ -47,7 +47,7 @@ export default function HardSkills() {
           <span className="skills-strong"> [ {selectedCategory} ]</span>
         </h5>
 
-        <div className="block w-full h-[2px] bg-disabled mb-10" />
+        <div className="line-secondary" />
         {selectedCards.map((card) => (
           <HardSkillsCard
             key={card.title}

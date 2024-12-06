@@ -11,18 +11,16 @@ export default function HardSkillsCard({
   text,
 }: HardSkillsCardProps) {
   return (
-    <div>
-      <ul>
-        <li className="flex mb-5">
-          <div className="skill-image-container">
-            <img src={logo} alt={logo} />
-          </div>
-          <div className="flex flex-col">
-            <h6>{title}</h6>
-            <p>{text}</p>
-          </div>
-        </li>
-      </ul>
-    </div>
+    <ul className="group">
+      <li className="flex mb-5">
+        <div className="skill-image-container">
+          <img src={logo} alt={logo} />
+        </div>
+        <div className="flex flex-col">
+          <h6 className="group-hover:text-tertiary custom-trans">{title}</h6>
+          <p>{text}</p>
+        </div>
+      </li>
+    </ul>
   );
 }
