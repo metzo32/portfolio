@@ -97,6 +97,11 @@
         absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
     }
 
+    .li-centered {
+        @apply
+        flex justify-center items-center
+    }
+
     .bottom-gap {
         @apply
         mb-1
@@ -106,7 +111,7 @@
     
     .skills {
         @apply 
-        w-auto px-2 py-1 mr-3 text-center
+        w-auto px-2 py-1 mr-3 mb-3 text-center
         text-success
         border border-success
     }
@@ -150,6 +155,14 @@
 
         hover:bg-accentHover
     }
+    
+    .button-side {
+        @apply
+        bg-accent pl-6 pr-16 py-3
+        rounded-s-full
+
+        hover:brightness-90 hover:-translate-x-3
+    }
 
     .button-list {
         @apply
@@ -164,6 +177,13 @@
         text-success
     }
 
+    .header-menu-container {
+        @apply
+        w-[120px] flex justify-between items-center
+    
+        md:w-[200px]
+    }
+
     .nav-menu-wrapper {
         @apply
         w-screen py-10 -mx-20 px-20
@@ -176,7 +196,28 @@
     
     .nav-menu-container {
         @apply
-        w-long flex justify-between items-center
+        w-full flex justify-between items-center
+        lg:w-long
+    }
+
+    .nav-menu-container.col {
+        @apply
+        h-1/2
+        flex-col items-end
+        fixed top-28 -right-4 z-50
+    }
+
+    .menu-button {
+        @apply
+        w-12 h-12 
+        text-2xl text-success 
+        border border-success rounded-full
+        bg-background bg-opacity-50 
+        flex justify-center items-center
+        fixed top-10 right-10 z-50 
+        transition-all duration-300 ease-in-out
+
+        hover:scale-110 
     }
 
     .icons {

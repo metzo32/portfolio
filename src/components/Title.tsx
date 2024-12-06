@@ -54,13 +54,13 @@ export default function Title() {
           <IoMdMail onClick={handleMailClick} className="icons" />
         </div>
       </div>
-      <div className="title-image-container ">
+      {/* <div className="title-image-container ">
         <img
           src={profileImage}
           alt="profile image"
           className=" mix-blend-lighten"
         />
-      </div>
+      </div> */}
     </div>
   );
 }
