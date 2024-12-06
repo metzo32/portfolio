@@ -11,6 +11,7 @@ export default function Project() {
           title={data.title}
           description={data.description}
           text={data.text}
+          skills={data.skills}
         />
       ))}
     </div>

@@ -5,13 +5,13 @@ export default function ScrollToTopButton() {
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
-    setIsVisible(scrollTop > 200); 
+    setIsVisible(scrollTop > 200);
   };
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", 
+      behavior: "smooth",
     });
   };
 
@@ -25,14 +25,14 @@ export default function ScrollToTopButton() {
 
   return (
     <div>
-      {isVisible && (
-        <button
-          onClick={scrollToTop}
-          className="top-button"
-        >
-          Top
-        </button>
-      )}
+      <button
+        onClick={scrollToTop}
+        className={`top-button ${
+          isVisible ? "translate-y-0" : "translate-y-[400%]"
+        }`}
+      >
+        Top
+      </button>
     </div>
   );
 }

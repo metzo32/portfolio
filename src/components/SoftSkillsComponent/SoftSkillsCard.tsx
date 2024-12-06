@@ -19,7 +19,9 @@ export default function SoftSkillsCard({num, image, title, text, initialSelected
     <div className={`soft-card-container ${isSelected ? "" : "deactive"}`} onClick={handleClick}>
         <div className="soft-card-box">
             <h6 className="w-full">{num}</h6>
+            <div className={`soft-icon-box ${isSelected ? "active" : ""}`}>
             {image}
+            </div>
             <h5 className={`${isSelected ? "" : "invisible"}`}>{title}</h5>
             <p className={`small-p ${isSelected ? "" : "invisible"}`}>{text}</p>
         </div>

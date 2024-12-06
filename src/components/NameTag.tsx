@@ -5,7 +5,6 @@ export default function NameTag() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // 스크롤 위치가 200px 이상일 때 나타나고, 다시 올라오면 숨김
       if (window.scrollY > 200) {
         setIsVisible(true);
       } else {
@@ -16,7 +15,6 @@ export default function NameTag() {
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-      // 이벤트 리스너 클린업
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);

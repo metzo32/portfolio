@@ -15,7 +15,7 @@ const Section = forwardRef<HTMLDivElement, SectionProps>(
           <h2>{title}</h2>
           <div className="section-semi-title">
             <span className="text-tertiary mr-1">{num}</span>
-            <p>/ {title}</p>
+            <p className="hide-smallview">/ {title}</p>
           </div>
         </div>
         <span className="line">

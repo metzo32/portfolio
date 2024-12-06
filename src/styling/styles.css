@@ -34,7 +34,7 @@
     }
 
     h2 {
-        @apply text-2xl
+        @apply text-2xl whitespace-nowrap
 
         md:text-3xl
         lg:text-4xl
@@ -60,7 +60,9 @@
     }
 
     p {
-        @apply font-extralight
+        @apply text-sm font-extralight
+
+        md:text-lg
     }
 
     li {
@@ -73,10 +75,19 @@
 }
 
 @layer components {
+
+    .hide-smallview {
+        @apply
+        hidden 
+        md:block
+    }
+
     .line {
         @apply 
-        w-full h-[3px] bg-secondary block my-5
+        w-full h-[3px] bg-secondary block my-2
         relative
+
+        md:my-5
     }
 
     .line-blur {
@@ -85,11 +96,19 @@
         filter blur-sm
         absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
     }
+
+    .bottom-gap {
+        @apply
+        mb-1
+
+        md:mb-3
+    }
     
     .skills {
         @apply 
-        w-auto px-2 py-1 mr-5 text-center
-        border-2 border-textColor rounded-lg
+        w-auto px-2 py-1 mr-3 text-center
+        text-success
+        border border-success
     }
 
     .small-p {
@@ -111,12 +130,16 @@
 
     .button-light {
         @apply
-        px-4 py-2
+        px-3 py-1
+        text-base
+        whitespace-nowrap
         border border-transparent
         transition-all duration-200 ease-in-out
 
         hover:border-textColor
         hover:border-opacity-50
+        
+        md:text-lg md:px-4 md:py-2
     }
 
     .button-strong {
@@ -167,11 +190,20 @@
 
     .skill-icons {
         @apply 
-       m-16
-        text-6xl
         fill-success
         cursor-pointer
         transition-all duration-200 ease-in-out
+    }
+
+    .soft-icon-box {
+        @apply
+        m-16
+        text-6xl
+    }
+
+    .soft-icon-box.active {
+        @apply
+        animate-scale-bounce
     }
 }
 
@@ -233,7 +265,9 @@
 
     .section-semi-title {
         @apply
-        w-[240px] pt-3 border-t-2 border-white flex justify-end
+        w-[35%] pt-1 border-t-0 border-textColor flex justify-end
+
+        md:w-[240px] md:border-t-2 md:pt-2
     }
 
     .title-name {
@@ -334,27 +368,41 @@
     .project-grid {
         @apply 
         w-full
-        grid grid-cols-1 gap-x-12 gap-y-24
-        auto-rows-min
-
-        lg:grid-cols-2
+ 
     }
 
     .project-card-wrapper {
         @apply
         w-full
         flex flex-col
+        mb-36
     }
     
     .project-card-container {
         @apply 
         w-full
-        flex justify-between
+        flex flex-col justify-between
+
+        md:flex-row
+    }
+
+    .project-image-container {
+        @apply
+        w-full aspect-golden bg-blue-900
+
+        md:w-short md:aspect-golden
+    }
+    
+    .project-text-container {
+        @apply
+        flex-1 mt-5 ml-0 flex flex-col items-start
+
+        md:ml-10
     }
 
     .skills-container {
         @apply 
-        mt-8
+        mt-5
         flex flex-wrap items-center
     }
     
@@ -416,13 +464,13 @@
         @apply
         w-full h-full p-10
     }
-
+/* 
     .hard-title {
         @apply
         font-alphabetStrong
         text-3xl text-tertiary mb-5
         text-center
-    }
+    } */
 
     .hard-description {
         @apply
