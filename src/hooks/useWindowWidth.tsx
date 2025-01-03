@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 export default function useWindowWidth() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -15,5 +15,7 @@ export default function useWindowWidth() {
     };
   }, []);
 
-  return windowWidth;
+  const isWide = useMemo(() => windowWidth > 768, [windowWidth]);
+
+  return {windowWidth, isWide};
 }

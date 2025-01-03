@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useWindowWidth from "../hooks/useWindowWidth";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
@@ -9,8 +9,10 @@ interface NavbarProps {
 }
 
 export default function Navbar({ sectionRefs, sectionData }: NavbarProps) {
-  const windowWidth = useWindowWidth();
-  const [isOpen, setIsOpen] = useState(false);
+  const { isWide } = useWindowWidth();
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const scrollToSection = (index: number) => {
     sectionRefs[index].current?.scrollIntoView({ behavior: "smooth" });
@@ -20,9 +22,32 @@ export default function Navbar({ sectionRefs, sectionData }: NavbarProps) {
     setIsOpen(!isOpen);
   };
 
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      setIsVisible(false);
+    } else {
+      setIsVisible(true);
+    }
+
+    setLastScrollY(currentScrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    if (isOpen) {
+      setIsVisible(true);
+    }
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY, isOpen]);
+
   return (
     <>
-      {windowWidth > 768 ? (
+      {isWide ? (
         <nav className="nav-menu-wrapper">
           <ul className="nav-menu-container">
             {sectionData.map((data, index) => (
@@ -39,23 +64,28 @@ export default function Navbar({ sectionRefs, sectionData }: NavbarProps) {
         </nav>
       ) : (
         <>
-          <button className="menu-button" onClick={handleMenuOpen}>
+          <button
+            className={`menu-button transition-transform duration-100 ${
+              isVisible ? "translate-y-0" : "-translate-y-16"
+            }`}
+            onClick={handleMenuOpen}
+          >
             {isOpen ? <AiOutlineClose /> : <RxHamburgerMenu />}
           </button>
           {isOpen ? (
-            <div className="back-cover fixed top-0 left-0 z-40 w-screen h-screen bg-shadow bg-opacity-50">
-            <ul className="nav-menu-container col">
-              {sectionData.map((data, index) => (
-                <li key={index}>
-                  <button
+            <div className="back-cover">
+              <ul className="nav-menu-container col">
+                {sectionData.map((data, index) => (
+                  <li
+                    key={index}
                     className="button-side"
                     onClick={() => scrollToSection(index)}
                   >
+                    <span className="item-index">{`0${index + 1}`}</span>
                     {data.title}
-                  </button>
-                </li>
-              ))}
-            </ul>
+                  </li>
+                ))}
+              </ul>
             </div>
           ) : null}
         </>

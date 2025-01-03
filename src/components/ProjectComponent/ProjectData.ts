@@ -4,7 +4,7 @@ const projectData = [
     title: "Plantic",
     description: "실내 식물 정보 검색 서비스",
     text: "공공 데이터 API를 활용한 실내 식물 검색 서비스입니다. 한글 및 영문 이름의 검색이 가능하고, 난이도를 비롯한 광도, 습도, 성장 속도에 따라 검색 결과가 다를 수 있도록 구현했습니다.",
-    skills: ["Typescript", "React", "Redux", "Tailwind", "React-Router-DOM"],
+    skills: ["Typescript", "React", "Redux", "Tailwind", "React-Router-DOM", "Vite"],
   },
   {
     thumbnail: "",
@@ -30,7 +30,7 @@ const projectData = [
   {
     thumbnail: "",
     title: "숫자 업다운 게임",
-    description: "입력한 숫자를 프로그램이 맞춰가가는 게임",
+    description: "입력한 숫자를 프로그램이 맞춰나가는 게임",
     text: "더 자세한 설명",
     skills: ["React-Native"],
   },

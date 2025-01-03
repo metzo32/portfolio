@@ -48,9 +48,15 @@ module.exports = {
           "50%": { transform: "scale(1.2)" },
           "100%": { transform: "scale(1)" },
         },
+        "line-extend": {
+          "0%": { transform: "scaleX(0.2)", "transform-origin": "left" },
+          "70%": { transform: "scaleX(0.9)", "transform-origin": "left" },
+          "100%": { transform: "scaleX(1)", "transform-origin": "left" },
+        }
       },
       animation: {
         "scale-bounce": "scale-bounce 0.3s ease-in-out",
+        "line-extend": "line-extend 0.3s ease-in-out",
       },
     },
   },

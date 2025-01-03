@@ -1,9 +1,11 @@
 import { useState } from "react";
+import useWindowWidth from "../../hooks/useWindowWidth";
 
 import HardSkillsCard from "./HardSkillsCard";
 import hardSkillsData from "./HardSkillsData";
 
 export default function HardSkills() {
+  const { isWide } = useWindowWidth();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(
     hardSkillsData.length > 0 ? hardSkillsData[0].category : null
   );
@@ -25,8 +27,8 @@ export default function HardSkills() {
     [];
 
   return (
-    <div className="w-full flex justify-center">
-      <ul className="h-[200px] flex flex-col justify-between">
+    <div className={`hard-wrapper ${isWide ? "" : "flex-col"}`}>
+      <ul className={`hard-list-container ${isWide ? "flex-col" : ""}`}>
         {hardSkillsData.map((data) => (
           <li key={data.category}>
             <button
@@ -41,22 +43,27 @@ export default function HardSkills() {
         ))}
       </ul>
 
-      <div className={`w-long py-2 ml-16 ${showCard ? "block" : "invisible"}`}>
+      <div className={`hard-items-wrapper ${showCard ? "block" : "invisible"}`}>
         <h5 className="mb-2">
           Skill Stack in
           <span className="skills-strong"> [ {selectedCategory} ]</span>
         </h5>
 
-        <div className="line-secondary" />
-        {selectedCards.map((card) => (
-          <HardSkillsCard
-            key={card.title}
-            category={selectedCategory || ""}
-            logo={card.logo}
-            title={card.title}
-            text={card.text}
-          />
-        ))}
+        <div
+          key={selectedCategory}
+          className={`line-secondary ${selectedCategory ? "line-animate" : ""}`}
+        />
+        <ul className="flex flex-col gap-5">
+          {selectedCards.map((card) => (
+            <HardSkillsCard
+              key={card.title}
+              category={selectedCategory || ""}
+              logo={card.logo}
+              title={card.title}
+              text={card.text}
+            />
+          ))}
+        </ul>
       </div>
     </div>
   );

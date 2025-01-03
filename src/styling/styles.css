@@ -1,139 +1,150 @@
-@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 /* Helvetica */
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 
-@import '/src/styling/fonts.css';
+@import "/src/styling/fonts.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply font-korean
-        break-keep
-      }
-      
-      /* 한글에만 Pretendard 적용 */
-      *:lang(ko) {
-        @apply font-korean
-      }
-      
-      /* 알파벳에 Helvetica 적용 */
-      *:lang(en) {
-        @apply font-alphabet
-      }
-      
+  body {
+    @apply font-korean
+        break-keep;
+  }
 
-    h1, h2, h3, h4, h5, h6, p, span, li, a, blockquote {
-        @apply leading-snug text-xl
-      }
+  /* 한글에만 Pretendard 적용 */
+  *:lang(ko) {
+    @apply font-korean;
+  }
 
-    h1 {
-        @apply text-7xl font-light
-    }
+  /* 알파벳에 Helvetica 적용 */
+  *:lang(en) {
+    @apply font-alphabet;
+  }
 
-    h2 {
-        @apply text-2xl whitespace-nowrap
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  li,
+  a,
+  blockquote {
+    @apply leading-snug text-xl;
+  }
+
+  h1 {
+    @apply text-7xl font-light;
+  }
+
+  h2 {
+    @apply text-2xl whitespace-nowrap
 
         md:text-3xl
-        lg:text-4xl
-    }
+        lg:text-4xl;
+  }
 
-    h3 {
-        @apply font-light
-        text-lg
+  h3 {
+    @apply font-light
+        text-base
 
-        md:text-xl
-    }
+        sm:text-xl;
+  }
 
-    h4 {
-        @apply text-xl
-    }
+  h4 {
+    @apply text-xl;
+  }
 
-    h5 {
-        @apply font-bold
-    }
+  h5 {
+    @apply font-bold;
+  }
 
-    h6 {
-        @apply text-2xl
-    }
+  h6 {
+    @apply text-xl
 
-    p {
-        @apply text-sm font-extralight
+    md:text-2xl;
+  }
 
-        md:text-lg
-    }
+  p {
+    @apply text-sm font-extralight
 
-    li {
-        @apply font-extralight
-    }
+        md:text-lg;
+  }
 
-    a {
-        @apply font-extralight
-    }
+  li {
+    @apply font-extralight;
+  }
+
+  a {
+    @apply font-extralight;
+  }
 }
 
 @layer components {
+  .custom-trans {
+    @apply transition-all duration-300 ease-in-out;
+  }
 
-    .custom-trans {
-        @apply
-        transition-all duration-300 ease-in-out
-    }
+  .hide-smallview {
+    @apply hidden 
+        md:block;
+  }
 
-    .hide-smallview {
-        @apply
-        hidden 
-        md:block
-    }
-
-    .line {
-        @apply 
-        w-full h-[3px] bg-secondary block my-2
+  .line {
+    @apply w-full h-[3px] bg-secondary block my-2
         relative
 
-        md:my-5
-    }
+        md:my-5;
+  }
 
-    .line-blur {
-        @apply 
-        w-full h-[5px] bg-secondary block
+  .line-blur {
+    @apply w-full h-[5px] bg-secondary block
         filter blur-sm
         absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
-    }
+  }
 
-    .line-secondary {
-        @apply
-        block w-full h-[2px] bg-disabled mb-10
-    }
+  .line-secondary {
+    @apply block w-full h-[2px] bg-disabled mb-5
+        custom-trans
+        
+        md:mb-10;
+  }
 
-    .li-centered {
-        @apply
-        flex justify-center items-center
-    }
+  .line-animate {
+    @apply animate-line-extend;
+  }
 
-    .bottom-gap {
-        @apply
-        mb-1
+  .li-centered {
+    @apply flex justify-center items-center;
+  }
 
-        md:mb-3
-    }
-    
-    .skills {
-        @apply 
-        w-auto px-2 py-1 mr-3 my-1 text-center
+  .bottom-gap {
+    @apply mb-1
+
+        md:mb-3;
+  }
+
+  .skills {
+    @apply w-auto px-3 py-1 text-center
         text-success
         border border-success
+        text-sm font-extralight
 
-        md:mb-0 md:my-3
-    }
+        md:text-lg;
+  }
 
-    .small-p {
-        @apply text-center text-base
-    }
+  .small-p {
+    @apply text-center text-base;
+  }
 
-    .button-full {
-        @apply
+  .button-full {
+    @apply 
+        w-[200px]
         px-5 py-2
         flex justify-between items-center
         border-2 border-textColor
@@ -142,246 +153,252 @@
         custom-trans
         
         hover:bg-opacity-10
-        hover:text-textColor
-    }
+        hover:text-textColor;
+  }
 
-    .button-light {
-        @apply
-        px-3 py-1
+  .button-light {
+    @apply px-0 py-1
         text-base
         whitespace-nowrap
-        border border-transparent
+        border-b border-transparent
         custom-trans
 
         hover:border-textColor
         hover:border-opacity-50
         
-        md:text-lg md:px-4 md:py-2
-    }
+        md:text-lg md:p-2;
+  }
 
-    .button-strong {
-        @apply
-        w-[70%] h-[50px]
+  .button-strong {
+    @apply w-[70%] h-[50px]
         bg-accent
         custom-trans
 
-        hover:bg-accentHover
-    }
-    
-    .button-side {
-        @apply
-        bg-accent pl-6 pr-16 py-3
-        rounded-s-full
+        hover:bg-accentHover;
+  }
 
-        hover:brightness-90 hover:-translate-x-3
-    }
-
-    .button-list {
-        @apply
-        px-4 py-2
+  .button-side {
+    @apply 
+        p-1
+        border-b border-transparent
         custom-trans
+        flex gap-2
+        cursor-pointer
+        text-base
+
+        hover:-translate-x-3
+        hover:border-white;
+  }
+
+  .button-list {
+    @apply px-1 py-1
+        text-base
+        custom-trans
+        border-b-2 border-transparent
 
         hover:text-success
-    }
 
-    .button-list.clicked {
-        @apply
-        text-success
-    }
+        md:text-lg
+        md:px-4 md:py-1
+        md:border-l-2;
+  }
 
-    .header-menu-container {
-        @apply
-        w-[120px] flex justify-between items-center
+  .button-list.clicked {
+    @apply
+      text-success
+        border-success
+
+        md:border-b-transparent;
+  }
+
+  .header-menu-container {
+    @apply w-[120px] flex justify-between items-center
     
-        md:w-[200px]
-    }
+        md:w-[200px];
+  }
 
-    .nav-menu-wrapper {
-        @apply
-        w-screen py-10 -mx-20 px-20
+  .nav-menu-wrapper {
+    @apply w-screen py-10 -mx-20 px-20
+        box-border
         flex justify-end
         sticky top-0 z-50
 
         md:-mx-24 md:px-24
-        lg:-mx-48 lg:px-48
-    }
-    
-    .nav-menu-container {
-        @apply
-        w-full flex justify-between items-center
-        lg:w-long
-    }
+        lg:-mx-48 lg:pl-[38.2%] lg:pr-48;
+  }
 
-    .nav-menu-container.col {
-        @apply
-        h-1/2
-        flex-col items-end
-        fixed top-28 -right-4 z-50
-    }
+  .nav-menu-container {
+    @apply w-full flex justify-end gap-10;
+  }
 
-    .menu-button {
-        @apply
-        w-12 h-12 
+  .nav-menu-container.col {
+    @apply 
+        h-1/2 px-5
+        flex-col items-end gap-7
+        fixed top-28 z-50
+  }
+
+  .menu-button {
+    @apply w-10 h-10 
         text-2xl text-success 
         border border-success rounded-full
         bg-background bg-opacity-50 
         flex justify-center items-center
-        fixed top-10 right-10 z-50 
+        fixed top-5 right-5 z-50 
         custom-trans
 
-        hover:scale-110 
-    }
+        hover:scale-110;
+  }
 
-    .icons {
-        @apply 
-        text-4xl
+  .back-cover {
+    @apply
+    fixed top-0 left-0 z-40 w-full h-full 
+    bg-shadow bg-opacity-80
+  }
+
+  .icons {
+    @apply text-2xl
         cursor-pointer
         custom-trans
+        inline-block
 
         hover:text-surface
-    }
 
-    .skill-icons {
-        @apply 
-        fill-success
+        md:text-4xl
+  }
+
+  .skill-icons {
+    @apply fill-success
         cursor-pointer
-        custom-trans
-    }
+        custom-trans;
+  }
 
-    .soft-icon-box {
-        @apply
-        m-16
-        text-6xl
-    }
+  .soft-icon-box {
+    @apply m-16
+        text-6xl;
+  }
 
-    .soft-icon-box.active {
-        @apply
-        animate-scale-bounce
-    }
+  .soft-icon-box.active {
+    @apply animate-scale-bounce;
+  }
 }
 
 @layer utilities {
-    ::selection {
-        @apply bg-tertiary text-textColor
-      }
+  ::selection {
+    @apply bg-tertiary text-textColor;
+  }
 
-    .wrapper {
-        @apply 
-        min-w-[320px]
-        px-16 pt-20 bg-background
+  .wrapper {
+    @apply min-w-[320px]
+        px-6 pt-20 bg-background
 
         md:px-24 md:pt-28
-        lg:px-48
-    }
+        lg:px-48;
+  }
 
-    .wrapper-blur {
-        @apply
-        w-screen h-[80px] -ml-20 scale-125
+  .wrapper-blur {
+    @apply w-screen h-[80px] -ml-20 scale-125
         fixed top-0 transform -translate-y-1/2 z-20
         bg-shadow 
         blur-xl
 
         md:-ml-24 md:h-[150px]
-        lg:-ml-48
-    }
+        lg:-ml-48;
+  }
 
-    .header-wrapper {
-        @apply
-        w-full
+  .header-wrapper {
+    @apply w-full
         flex justify-between items-center
-        select-none
-    }
+        select-none;
+  }
 
-    .title-wrapper {
-        @apply
-        w-full py-48
+  .title-wrapper {
+    @apply w-full py-48
         flex items-center
-        relative z-10
-    }
+        relative z-10;
+  }
 
-    .title-container {
-        @apply
-        w-full
+  .title-container {
+    @apply w-full flex flex-col gap-5
 
-        md:w-1/2
-    }
+        md:w-1/2 md:gap-10;
+  }
 
-    .section-wrapper {
-        @apply
-        w-full pt-36 pb-[1000px]
-    }
+  .item-index {
+    @apply text-tertiary text-base
 
-    .section-title-container {
-        @apply
-        w-full flex justify-between items-center
-    }
+    md:text-lg
+  }
 
-    .section-semi-title {
-        @apply
-        w-[35%] pt-1 border-t-0 border-textColor flex justify-end
+  .section-wrapper {
+    @apply w-full pt-36 pb-[1000px];
+  }
 
-        md:w-[240px] md:border-t-2 md:pt-2
-    }
+  .section-title-container {
+    @apply w-full flex justify-between items-center;
+  }
 
-    .title-name {
-        @apply
-        text-success 
+  .section-semi-title {
+    @apply w-[35%] 
+    border-t-0 border-textColor 
+    flex justify-end gap-1
+
+    md:w-[240px] md:border-t-2 md:pt-3;
+  }
+
+  .title-name {
+    @apply text-success 
         text-5xl
 
         md:text-6xl
-        lg:text-8xl
-    }
+        lg:text-8xl;
+  }
 
-    .name-container {
-        @apply
-        flex mb-3
-    }
+  .name-container {
+    @apply flex gap-5 items-center;
+  }
 
-    .name-tag {
-        @apply
-        w-[100px] py-10
+  .name-tag {
+    @apply w-[100px] py-10
         origin-left -rotate-90 
         sticky bottom-0 left-0 transition-transform -translate-x-[140px] 
         duration-300 ease-in-out
-        select-none
-    }
+        select-none;
+  }
 
-    .title-strong {
-        @apply
-        text-2xl text-tertiary
+  .title-strong {
+    @apply text-2xl text-tertiary
 
         md:text-3xl
-        lg:text-4xl
-    }
+        lg:text-4xl;
+  }
 
-    .icons-box {
-        @apply
-        w-[140px] my-12
-        flex justify-between items-center 
-    }
+  .icons-box {
+    @apply w-[140px]
+        flex items-center gap-5
 
-    .title-image-container {
-        @apply
-        w-[1000px] h-[1000px] 
+        md:gap-10;
+  }
+
+  .title-image-container {
+    @apply w-[1000px] h-[1000px] 
         absolute bottom-0 right-0 transform translate-x-48 translate-y-1/4 -z-10 
         bg-background 
         select-none
         opacity-10
-        pointer-events-none
-    }
+        pointer-events-none;
+  }
 
-    .soft-card-wrapper {
-        @apply
-        w-full grid gap-5
+  .soft-card-wrapper {
+    @apply w-full grid gap-5
         grid-cols-1
 
         md:grid-cols-2 md:grid-rows-2
-        lg:grid-cols-4 lg:grid-rows-1
-    }
+        lg:grid-cols-4 lg:grid-rows-1;
+  }
 
-    .soft-card-container {
-        @apply 
-        w-full pt-6
+  .soft-card-container {
+    @apply w-full pt-6
         flex flex-col justify-between items-center
         bg-surface
         shadow-xl
@@ -392,169 +409,164 @@
         hover:scale-110
         hover:shadow-xl
 
-        md:aspect-golden-reverse
-    }
+        md:aspect-golden-reverse;
+  }
 
-    .soft-card-container.deactive {
-        @apply
-        grayscale-[50%]
+  .soft-card-container.deactive {
+    @apply grayscale-[50%]
         brightness-50
         opacity-50
 
         hover:opacity-100
-        hover:brightness-75
-    }
+        hover:brightness-75;
+  }
 
-    .soft-card-box {
-        @apply w-full h-full px-8
-        flex flex-col items-center
-    }
+  .soft-card-box {
+    @apply w-full h-full px-8
+        flex flex-col items-center;
+  }
 
-    .card-deact {
-        @apply w-full h-4 mt-8 block bg-accent
-    }
+  .card-deact {
+    @apply w-full h-4 mt-8 block bg-accent;
+  }
 
-    .card-deact.card-deactive {
-        @apply bg-disabled
-    }
+  .card-deact.card-deactive {
+    @apply bg-disabled;
+  }
 
-    .project-grid {
-        @apply 
-        w-full
- 
-    }
+  .project-grid {
+    @apply w-full;
+  }
 
-    .project-card-wrapper {
-        @apply
-        w-full
+  .project-card-wrapper {
+    @apply w-full
         flex flex-col
-        mb-36
-    }
-    
-    .project-card-container {
-        @apply 
-        w-full
+        mb-36;
+  }
+
+  .project-card-container {
+    @apply w-full
         flex flex-col justify-between
 
-        md:flex-row
-    }
+        md:flex-row;
+  }
 
-    .project-image-container {
-        @apply
-        w-full aspect-golden bg-blue-900
+  .project-image-container {
+    @apply w-full aspect-golden bg-blue-900
         mb-5
 
         md:w-short md:aspect-golden
-        md:mb-0
-    }
-    
-    .project-text-container {
-        @apply
-        flex-1  ml-0 flex flex-col items-start
+        md:mb-0;
+  }
 
-        md:ml-10
-    }
+  .project-text-container {
+    @apply flex-1  ml-0 flex flex-col items-start
 
-    .skills-container {
-        @apply 
-        mt-5
-        flex flex-wrap items-center
+        md:ml-10;
+  }
 
-        md:mt-0
-    }
-    
-    .skills-strong {
-        @apply
-        text-success
-    }
+  .skills-container {
+    @apply flex flex-wrap items-center
+        gap-3
+        mt-3;
+  }
 
-    .contact-wrapper {
-        @apply w-full flex justify-end
-    }
+  .skills-strong {
+    @apply text-success;
+  }
 
-    .contact-container {
-        @apply 
-        w-[80%] py-24
+  .contact-wrapper {
+    @apply w-full flex justify-end;
+  }
+
+  .contact-container {
+    @apply w-[80%] py-24
         bg-primary
-        flex flex-col items-end
-    }
+        flex flex-col items-end;
+  }
 
-    .contact-content {
-        @apply
-        w-long h-[500px] relative 
-        flex flex-col justify-between
-    }
+  .contact-content {
+    @apply w-long h-[500px] relative 
+        flex flex-col justify-between;
+  }
 
-    .contact-title {
-        @apply
-         bg-secondary px-16 py-10
-        flex justify-between
-    }
+  .contact-title {
+    @apply bg-secondary px-16 py-10
+        flex justify-between;
+  }
 
-    .contact-text {
-        @apply
-        w-full flex-1 px-16 pt-10
-        flex flex-col justify-between
-    }
+  .contact-text {
+    @apply w-full flex-1 px-16 pt-10
+        flex flex-col justify-between;
+  }
 
-    .hard-card-wrapper {
-        @apply w-full flex justify-between px-24
-    }
+  .hard-wrapper {
+    @apply w-full flex justify-center items-center
 
-    .hard-card-line {
-        @apply w-[300px] h-[400px]
+        md:items-start;
+  }
+
+  .hard-list-container {
+    @apply w-full h-[80px] flex justify-between
+
+        md:w-auto md:h-[200px];
+  }
+
+  .hard-items-wrapper {
+    @apply w-full py-2 ml-0
+
+        md:w-long md:ml-16;
+  }
+
+  .hard-card-wrapper {
+    @apply w-full flex justify-between px-24;
+  }
+
+  .hard-card-line {
+    @apply w-[300px] h-[400px]
         rounded-md
         border-2 border-surface
-        relative
-    }
+        relative;
+  }
 
-    .hard-card-blur {
-        @apply 
-        w-[300px] h-[400px]
+  .hard-card-blur {
+    @apply w-[300px] h-[400px]
         rounded-md
         border-2 border-surface
         filter blur-sm
-        absolute top-0 left-0
-    }
+        absolute top-0 left-0;
+  }
 
-    .hard-card-container {
-        @apply
-        w-full h-full p-10
-    }
-/* 
-    .hard-title {
-        @apply
-        font-alphabetStrong
-        text-3xl text-tertiary mb-5
-        text-center
-    } */
+  .hard-card-container {
+    @apply w-full h-full p-10;
+  }
 
-    .hard-description {
-        @apply
-        font-bold mb-5
-    }
+  .hard-description {
+    @apply font-bold mb-5;
+  }
 
-    .hard-text {
-        @apply
-        text-base
-    }
+  .hard-text {
+    @apply text-base;
+  }
 
-    .skill-image-container {
-        @apply
-        w-[100px] h-[100px] p-3 mr-5
-        bg-surface
-        /* border-2 border-success */
+  .skill-image-container {
+    @apply w-[70px] h-[70px] p-3
+        bg-surface 
+        border-2 border-success
         flex justify-center items-center
         flex-shrink-0
-    }
 
-    .top-button {
-        @apply
-        fixed bottom-10 right-10
+        md:w-[100px] md:h-[100px]
+  }
+
+  .top-button {
+    @apply fixed bottom-5 right-5
         border-y border-success text-success p-3
         custom-trans
         
          hover:bg-success 
          hover:bg-opacity-20
-    }
+
+         md:bottom-10 md:right-10;
+  }
 }
