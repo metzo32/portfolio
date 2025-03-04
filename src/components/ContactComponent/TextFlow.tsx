@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import ContactText from "./ContactText";
+import confetti from "canvas-confetti";
 
 const words = ["기회", "새로움", "도전", "성장"];
 
@@ -10,6 +11,7 @@ export default function TextFlow() {
   const [isRolling, setIsRolling] = useState(true);
   const [isClicked, setIsClicked] = useState(false)
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const [isFired, setIsFired] = useState(false)
 
   useEffect(() => {
     if (isRolling) {
@@ -28,10 +30,27 @@ export default function TextFlow() {
     };
   }, [isRolling]);
 
+  const fireConfetti = useCallback(() => {
+    if (isFired) return; 
+
+    setIsFired(true)
+
+    confetti({
+      particleCount: 200,
+      spread: 100,
+      origin: { y: 0.7 },
+      startVelocity: 90,
+      decay: 0.85, // 컨페티 사라지는 속도 (낮을수록 빨리 사라짐)
+      ticks: 100,
+    });
+  }, [isFired]);
+
   const handleClick = () => {
     setIsRolling(false)
     setIsClicked(true)
+    fireConfetti()
   }
+
 
   return (
     <div className="flex flex-col items-center gap-20">
