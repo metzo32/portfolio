@@ -1,7 +1,7 @@
+import Image from "next/image";
 import SkillsButton from "./SkillsButton";
 import { FaGithub } from "react-icons/fa";
 import DeployedButton from "../DeployedButton";
-import Image from "next/image";
 
 interface ProjectCardProps {
   git: string;
@@ -24,7 +24,6 @@ export default function ProjectCard({
   text,
   skills,
 }: ProjectCardProps) {
-  
   return (
     <div className="project-card-wrapper">
       <div className="project-card-container">
@@ -39,7 +38,7 @@ export default function ProjectCard({
             alt={title}
             className="project-img"
             width={256}
-            height={180}
+            height={144}
           />
           <div className="project-img-overlay">
             <span className="text-white text-lg">자세히 보기</span>
@@ -52,7 +51,7 @@ export default function ProjectCard({
               <h2>{title}</h2>
               {deployed && <DeployedButton />}
             </div>
-            <h3 className="text-tertiary">{description}</h3>
+            <h3 className="project-description">{description}</h3>
             <p>{text}</p>
           </div>
 

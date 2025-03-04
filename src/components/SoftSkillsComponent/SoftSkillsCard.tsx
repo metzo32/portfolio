@@ -30,12 +30,14 @@ export default function SoftSkillsCard({
     >
       <div className="soft-card-box">
         <h6 className="w-full">{num}</h6>
-        <div className={`soft-icon-box ${isSelected ? "active" : ""}`}>
-          {image}
-        </div>
-        <h5 className={`${isSelected ? "" : "invisible"}`}>{title}</h5>
-        <div className="soft-p-box">
-          <p className={`small-p ${isSelected ? "" : "invisible"}`}>{text}</p>
+        <div className="soft-card-content">
+          <div className={`soft-icon-box ${isSelected ? "active" : ""}`}>
+            {image}
+          </div>
+          <h5 className={`soft-card-title ${isSelected ? "" : "invisible"}`}>{title}</h5>
+          <div>
+            <p className={`text-center ${isSelected ? "" : "invisible"}`}>{text}</p>
+          </div>
         </div>
       </div>
       <span className={`card-deact ${isSelected ? "" : "card-deactive"}`} />

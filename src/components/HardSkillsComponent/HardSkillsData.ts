@@ -148,7 +148,7 @@ const hardSkillsData = [
     ],
   },
   {
-    category: "Others",
+    category: "ETC",
     cards: [
       {
         logo: githubLogo,
@@ -157,10 +157,10 @@ const hardSkillsData = [
         text: "버전 관리를 통해 코드 변경 사항 및 오류를 추적할 수 있고, 브랜치를 활용해 효율적인 작업이 가능합니다.",
       },
       {
-        logo: slackLogo,
-        alt: "Slack로고",
-        title: "Slack",
-        text: "팀 커뮤니케이션 도구로 활용합니다.",
+        logo: vercelLogo,
+        alt: "Vercel로고",
+        title: "Vercel",
+        text: "Next.js 기반의 프로젝트를 배포할 수 있고, 푸시 내역과 연동하여 지속적인 통합 및 배포(CI/CD) 프로세스를 갖출 수 있습니다.",
       },
       {
         logo: netlifyLogo,
@@ -169,10 +169,10 @@ const hardSkillsData = [
         text: "HTTPS 인증서를 통해 사용자에게 안정적으로 커스텀 도메인을 배포했습니다.",
       },
       {
-        logo: vercelLogo,
-        alt: "Vercel로고",
-        title: "Vercel",
-        text: "배포관련",
+        logo: slackLogo,
+        alt: "Slack로고",
+        title: "Slack",
+        text: "팀 커뮤니케이션 도구로 활용합니다.",
       },
     ],
   },

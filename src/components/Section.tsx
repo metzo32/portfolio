@@ -1,17 +1,18 @@
 import { ReactNode } from "react";
-import MotionWrapper from "./SectionMotion";
+// import MotionWrapper from "./SectionMotion";
+import Motion from "./Animation/Motion";
 
 interface SectionProps {
   children?: ReactNode;
   title: string;
   num: string;
-  id: string;
+  ref: React.RefObject<HTMLDivElement>
 }
 
-export default function Section({ children, title, num, id }: SectionProps) {
+export default function Section({ children, title, num, ref }: SectionProps) {
   return (
-    <MotionWrapper>
-      <section id={id} className="section-wrapper">
+     <Motion delay={0.3}>
+      <section className="section-wrapper" ref={ref}>
         <div className="section-title-container">
           <h2>{title}</h2>
           <div className="section-semi-title">
@@ -24,6 +25,6 @@ export default function Section({ children, title, num, id }: SectionProps) {
         </span>
         {children}
       </section>
-    </MotionWrapper>
+    </Motion>
   );
 }

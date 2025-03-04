@@ -8,7 +8,7 @@ export default function SelectionBar() {
   function calculateTrans(index: number): number {
     if (index === 0) return 0;
     if (index === 1) return 153;
-    if (index === 2) return 296;
+    if (index === 2) return 290;
     if (index === 3) return 420;
     return 0; // 기본값
   }

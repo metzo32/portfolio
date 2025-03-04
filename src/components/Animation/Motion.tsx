@@ -10,7 +10,7 @@ interface MotionProps {
 
 export default function Motion({ children, delay = 0 }: MotionProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const mainControls = useAnimation()
 
@@ -21,15 +21,15 @@ export default function Motion({ children, delay = 0 }: MotionProps) {
   }, [isInView]);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="w-full">
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: 75 },
-          visible: { opacity: 100, y: 0 },
+          hidden: { opacity: 0, y: 90, },
+          visible: { opacity: 100, y: 0,},
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.5, delay }}
+        transition={{ duration: 0.3, delay }}
       >
         {children}
       </motion.div>

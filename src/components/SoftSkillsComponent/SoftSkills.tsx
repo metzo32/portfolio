@@ -4,7 +4,7 @@ import SoftSkillData from "./SoftSkillsData";
 
 export default function SoftSkills() {
   return (
-    <div className="soft-card-wrapper mx-auto">
+    <div className="soft-card-wrapper">
       {SoftSkillData.map((data, index) => (
         <Snap key={index}>
           <SoftSkillsCard

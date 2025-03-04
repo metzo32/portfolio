@@ -6,7 +6,7 @@ export default function Project() {
   return (
     <div className="project-grid">
       {projectData.map((data, index) => (
-        <Motion key={index} delay={0.5}>
+        <Motion key={index} delay={0.3}>
           <ProjectCard
             git={data.git}
             url={data.url}

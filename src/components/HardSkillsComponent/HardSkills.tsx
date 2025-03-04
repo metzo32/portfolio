@@ -13,7 +13,6 @@ export default function HardSkills() {
     hardSkillsData.length > 0 ? hardSkillsData[0].category : null
   );
   const [showCard, setShowCard] = useState(true);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const { selectedIndex, setIndex } = useIndexStore();
 
@@ -33,7 +32,7 @@ export default function HardSkills() {
     <div className="hard-wrapper">
       <div className="hard-category-container">
         <SelectionBar />
-        <ul className="hard-list-container">
+        <ul className="hard-list-container flex flex-col items-start">
           {hardSkillsData.map((data, index) => (
             <li key={data.category}>
               <button
@@ -50,7 +49,7 @@ export default function HardSkills() {
       </div>
 
       <div className={`hard-items-wrapper ${showCard ? "block" : "invisible"}`}>
-        <h5 className="mb-2">
+        <h5 className="mb-2 font-medium">
           Skill Stack in
           <span className="skills-strong"> [ {selectedCategory} ]</span>
         </h5>
@@ -59,34 +58,20 @@ export default function HardSkills() {
           key={selectedCategory}
           className={`line-secondary ${selectedCategory ? "line-animate" : ""}`}
         />
-        <ul className="flex flex-col gap-5">
+        <ul className="flex flex-col gap-5 group">
           {selectedCards.map((card, index) => (
             <MotionAtOnce
               key={card.title}
               trigger={showCard}
               delay={index * 0.2}
             >
-              <div
-                key={card.title}
-                className={`custom-trans ${
-                  hoveredIndex === null
-                    ? ""
-                    : hoveredIndex === index
-                    ? "active"
-                    : "deactivate"
-                }`}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
                 <HardSkillsCard
                   category={selectedCategory || ""}
                   logo={card.logo}
                   alt={card.alt}
                   title={card.title}
                   text={card.text}
-                  isHovered={hoveredIndex === index ? "active" : ""}
                 />
-              </div>
             </MotionAtOnce>
           ))}
         </ul>

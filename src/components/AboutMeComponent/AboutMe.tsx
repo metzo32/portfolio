@@ -1,31 +1,63 @@
+import { ReactNode } from "react";
+
+interface AboutMeDataProps {
+  title: string;
+  content: ReactNode;
+}
+
 export default function AboutMe() {
-  const aboutMeData = [
+  const aboutMeData: AboutMeDataProps[] = [
     {
       title: "왜 프론트엔드 개발자가 되고 싶은지?",
-      content: `많은 사람들와 소통하며 즐거움을 주고 싶다는 생각을 시작으로 3D 게임 디자이너로 활동하였습니다. 
-        게임이 모두에게 우호적인 매체가 될 것이라는 희망을 품었지만, 그 한계를 느끼고 보다 많은 사람과 선한 상호작용을 할 수 있을지 고민하였습니다. 
-        때마침 참여한 웹 기반의 게임 프로젝트의 성공을 맛보고, 개발 분야에 흥미를 가지기 시작했습니다. 
-        프론트엔드 개발자는 여러 분야의 중간에 서있는 입장이라고 생각합니다.
-        단순히 제시된 디자인을 구현하는 것을 넘어, "왜 이 구조가 최선이며", "어떻게 하는 것이 더 나은 경험을 줄 지" 에 대해 끊임없이 연구해야하는 점이 매력으로 다가왔습니다.
-        행동을 탄탄한 근거를 바탕으로 옮기는 기질과, 누군가의 생각이나 의견을 보다 효과적으로 전달하는 능력을 접목시켰습니다.`,
+      content: (
+        <div className="about-text-box">
+          <p>
+            3D 디자이너로서 참여한 웹 프로젝트의 성공을 맛본 뒤,{" "}
+            <span className="about-span">
+              인터페이스가 사용자의 경험에 미치는 힘</span>{" "}
+            에 대해 배웠습니다.
+          </p>
+          <p>
+            또한 단순히 구현하는 것을 넘어, 왜 이 구조가 최선이며, 어떻게 하는
+            것이 더 나은 경험을 줄지에 대해{" "}
+            <span className="about-span">논리적이고</span>{" "}
+            <span className="about-span">주체적으로 연구하는 모습</span>{" "}이
+            매력으로 다가왔습니다.
+          </p>
+        </div>
+      ),
     },
     {
       title: "가장 추구하는 가치는?",
-      content: `
-        사용할 유저층을 예측하고, 그에 맞는 사용성을 제공해야 한다고 생각합니다.
-        상징이나 액션이 자연스럽고, 예측할 수 있어야 합니다.
-        보다 부드러운 소통을 추구합니다.
-        좋은 UI는 모두에게 사용이 용이해야한다고 생각합니다.
-        예측 가능성과 신뢰
-        유저 입장에서, 유저 친화적
-      `,
+      content: (
+        <div className="about-text-box">
+          <p>
+            프론트엔드는 제작자와 사용자, 그리고 앱을 구성하는 많은 분야를{" "}
+            <span className="about-span">한데 묶어주는 용매</span>{" "}와 같다고
+            생각합니다.
+          </p>
+          <p>
+            계속해서 <span className="about-span">무게 중심을 맞추고</span>{" "}, 더
+            나은 방향을 향해 <span className="about-span">조화롭게</span>{" "}
+            구성하고자 노력합니다.
+          </p>
+        </div>
+      ),
     },
     {
-      title: "내가 나를 발전시키는 힘은?",
-      content: `모르는 분야에서도 자신감을 가지고 성실히 임하는 것입니다.
-       노력은 배신하지 않는다는 생각으로 생소한 개념에 대한 설명도 꼼꼼히 읽고, 당장 이해하지 못하더라도 메모해두었다가 적용해보고 복습하는 패턴을 반복합니다.
-      미처 적용해보지 못한 기능이나 개념을 소규모 프로젝트를 생성해서 반드시 사용해보도록 합니다.
-       `,
+      title: "나의 강점은?",
+      content: (
+        <div className="about-text-box">
+          <p>
+            겸손한 자세로 스스로의 부족함을 끊임없이 발견하고,{" "}
+            <span className="about-span">근면히 다듬어 나가는 것</span>입니다.
+          </p>
+          <p>
+            어제보다 조금 더 균형잡힌 스스로를 발견하며 또 다시 발전할 힘을
+            얻습니다.
+          </p>
+        </div>
+      ),
     },
   ];
 
@@ -33,15 +65,8 @@ export default function AboutMe() {
     <div className="about-wrapper">
       {aboutMeData.map((item, index) => (
         <div key={index} className="about-container">
-          <h2>{item.title}</h2>
-          <p>
-            {item.content.split("\n").map((line, i) => (
-              <span key={i}>
-                {line}
-                <br />
-              </span>
-            ))}
-          </p>
+          <h2 className="about-title">{item.title}</h2>
+          {item.content}
         </div>
       ))}
     </div>

@@ -1,15 +1,27 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
+import DarkModeButton from "./DarkModeButton";
 
 export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
-  const handleScroll = () => {
-    const scrollTop = window.scrollY;
-    setIsVisible(scrollTop > 200);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
 
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -17,22 +29,16 @@ export default function ScrollToTopButton() {
     });
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-      <button
-        onClick={scrollToTop}
-        className={`top-button ${
-          isVisible ? "translate-y-0" : "translate-y-[400%]"
-        }`}
-      >
+    <div
+      className={`top-button-container ${
+        isVisible ? "translate-y-0" : "translate-y-[250%]"
+      }`}
+    >
+      <DarkModeButton />
+      <button onClick={scrollToTop} className={`top-button`}>
         Top
       </button>
+    </div>
   );
 }

@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="kr">
+    <html lang="kr" className="dark">
       <body>
         <div className="wrapper">
           <div className="wrapper-blur" />

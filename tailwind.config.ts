@@ -4,8 +4,8 @@ import tailwindScrollbar from "tailwind-scrollbar";
 const goldenRatio = 1.618;
 
 module.exports = {
-  darkMode: 'class',
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -22,16 +22,26 @@ module.exports = {
       //색상
       colors: {
         primary: "#181847",
-        secondary: "#2E348A",
+        primaryLight: "#7f7fb8",
+        secondary: "#23284b",
+        secondaryLight: "#FFFFFF",
         tertiary: "#E69238",
+        tertiaryLight: "#f77211",
         accent: "#D82F32",
         accentHover: "#b52023",
         textColor: "#FFFFFF",
+        textColorLight: "#262c50",
         textGray: "#706e7c",
+        textGrayLight: "#aaaaaa",
+        strongGrayLight: "#5b5b5b",
         success: "#2DFFC0",
+        successLight: "#181847",
         surface: "#463DB2",
+        surfaceLight: "#8694EC",
         background: "#131727",
+        backgroundLight: "#dce1e6",
         shadow: "#111321",
+        shadowLight: "#282828",
         disabled: "#8694EC",
       },
 
@@ -65,7 +75,7 @@ module.exports = {
       },
       
       animation: {
-        "scale-bounce": "scale-bounce 0.5s ease-in-out",
+        "scale-bounce": "scale-bounce 0.3s ease-in-out",
         "line-extend": "line-extend 0.3s ease-in-out",
 
         "slot-spin": "slotMove 0.1s linear infinite",
