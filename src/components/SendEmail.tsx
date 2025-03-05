@@ -1,16 +1,20 @@
 "use client";
 
 import { SiGmail } from "react-icons/si";
+import { sendEmail } from "@/\butils/email";
 
-export default function SendEmail() {
-  const handleMailClick = () => {
-    const email = atob("c2V5ZW9uLm1ldHpAZ21haWwuY29t"); //Base64로 인코딩
-    window.location.href = `mailto:${email}`;
-  };
-
+export function SendEmailIcon() {
   return (
-    <button onClick={handleMailClick} className="icons">
+    <button onClick={sendEmail} className="icons">
       <SiGmail />
+    </button>
+  );
+}
+
+export function SendEmailButton() {
+  return (
+    <button onClick={sendEmail} className="contact-link">
+      Email
     </button>
   );
 }

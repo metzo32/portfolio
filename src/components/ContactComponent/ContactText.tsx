@@ -1,4 +1,5 @@
 import Motion from "../Animation/Motion";
+import { SendEmailButton } from "../SendEmail";
 
 export default function ContactText() {
   return (
@@ -41,6 +42,7 @@ export default function ContactText() {
           >
             Notion
           </a>
+          <SendEmailButton/>
         </Motion>
       </div>
     </>

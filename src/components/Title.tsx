@@ -2,7 +2,7 @@
 import { FaGithub } from "react-icons/fa";
 import { SiNotion } from "react-icons/si";
 // import profileImage from "../assets/images/profile.png";
-import SendEmail from "./SendEmail";
+import { SendEmailIcon } from "./SendEmail";
 import MoreButton from "./MoreButton";
 import Motion from "./Animation/Motion";
 
@@ -58,7 +58,7 @@ export default function Title() {
               <SiNotion />
             </a>
 
-            <SendEmail />
+            <SendEmailIcon />
           </div>
         </Motion>
       </div>
