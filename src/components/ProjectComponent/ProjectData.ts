@@ -1,4 +1,3 @@
-
 const projectData = [
   {
     git: "https://github.com/metzo32/arto",
@@ -67,28 +66,34 @@ const projectData = [
     title: "나는 어떤 피자일까?",
     description: "나의 MBTI와 어울리는 피자를 알려주는 테스트",
     text: "MBTI 테스트 로직을 바탕으로 디스코드 친구들의 일화를 적용한 심리 테스트입니다.",
-    skills: ["Typescript", "React", "React-Router-DOM", "Styled-Components"],
+    skills: [
+      "Typescript",
+      "React",
+      "React-Router-DOM",
+      "Styled-Components",
+      "Bootstrap",
+    ],
   },
   {
     git: "https://github.com/metzo32/numberGame",
     deployed: false,
-    url: "",
+    url: "https://github.com/metzo32/numberGame",
     thumbnail: "/videos/video_numbergame.webp",
     title: "숫자 업다운 게임",
     description: "입력한 숫자를 프로그램이 맞춰나가는 게임",
     text: "유저가 입력한 수를 업다운 방식으로 프로그램이 추측할 수 있도록 구현했습니다.",
     skills: ["React-Native", "ngrok"],
   },
-  {
-    git: "",
-    deployed: false,
-    url: "",
-    thumbnail: "",
-    title: "Todo List",
-    description: "프로젝트 설명",
-    text: "더 자세한 설명",
-    skills: ["React-Native"],
-  },
+  // {
+  //   git: "",
+  //   deployed: false,
+  //   url: "",
+  //   thumbnail: "",
+  //   title: "Todo List",
+  //   description: "프로젝트 설명",
+  //   text: "더 자세한 설명",
+  //   skills: ["React-Native"],
+  // },
   {
     git: "https://github.com/metzo32/next_bookstore_approuter",
     deployed: false,
@@ -96,7 +101,7 @@ const projectData = [
     thumbnail: "",
     title: "도서 목록 검색",
     description: "Next.js의 Page Router와 App Router 버전 실습",
-    text: "더 자세한 설명",
+    text: "제공된 백엔드 데이터를 불러와 SSR, ISR을 비롯해 인터셉트 라우팅, 스켈레톤 UI 등 대표적인 기능을 사용해 기초를 다졌습니다.",
     skills: ["Typescript", "Next.js"],
   },
 ];
