@@ -33,7 +33,7 @@ const projectData = [
     ],
   },
   {
-    git: "https://github.com/metzo32/tapttoo_2",
+    git: "https://github.com/metzo32/tapttoo_gen",
     deployed: true,
     url: "https://tapttoo.netlify.app/",
     thumbnail: "/videos/video_tapttoo.webp",
