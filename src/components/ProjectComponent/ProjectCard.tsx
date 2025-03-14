@@ -39,6 +39,8 @@ export default function ProjectCard({
             className="project-img"
             width={256}
             height={144}
+            // placeholder="blur"
+            // blurDataURL={thumbnail}
           />
           <div className="project-img-overlay">
             <span className="text-white text-lg">자세히 보기</span>

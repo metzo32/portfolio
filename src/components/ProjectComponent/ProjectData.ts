@@ -2,7 +2,7 @@ const projectData = [
   {
     git: "https://github.com/metzo32/arto",
     deployed: true,
-    url: "https://arto-33hwth26j-metzs-projects-579177d6.vercel.app/",
+    url: "https://arto-steel.vercel.app/",
     thumbnail: "/videos/video_arto.gif",
     title: "Arto",
     description: "아티스트 포트폴리오 서칭 서비스",
@@ -83,26 +83,6 @@ const projectData = [
     description: "입력한 숫자를 프로그램이 맞춰나가는 게임",
     text: "유저가 입력한 수를 업다운 방식으로 프로그램이 추측할 수 있도록 구현했습니다.",
     skills: ["React-Native", "ngrok"],
-  },
-  // {
-  //   git: "",
-  //   deployed: false,
-  //   url: "",
-  //   thumbnail: "",
-  //   title: "Todo List",
-  //   description: "프로젝트 설명",
-  //   text: "더 자세한 설명",
-  //   skills: ["React-Native"],
-  // },
-  {
-    git: "https://github.com/metzo32/next_bookstore_approuter",
-    deployed: false,
-    url: "https://github.com/metzo32/next_bookstore_approuter",
-    thumbnail: "",
-    title: "도서 목록 검색",
-    description: "Next.js의 Page Router와 App Router 버전 실습",
-    text: "제공된 백엔드 데이터를 불러와 SSR, ISR을 비롯해 인터셉트 라우팅, 스켈레톤 UI 등 대표적인 기능을 사용해 기초를 다졌습니다.",
-    skills: ["Typescript", "Next.js"],
   },
 ];
 

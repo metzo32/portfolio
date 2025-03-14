@@ -1,7 +1,5 @@
-// import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 import { SiNotion } from "react-icons/si";
-// import profileImage from "../assets/images/profile.png";
 import { SendEmailIcon } from "./SendEmail";
 import MoreButton from "./MoreButton";
 import Motion from "./Animation/Motion";
@@ -62,20 +60,6 @@ export default function Title() {
           </div>
         </Motion>
       </div>
-      {/* <div className="title-image-container">
-        <Image
-          src={profileImage}
-          alt="profile image"
-          className="profile-image01"
-          draggable={false}
-        />
-        <Image
-          src={profileImage}
-          alt="profile image"
-          className="profile-image02"
-          draggable={false}
-        />
-      </div> */}
     </section>
   );
 }
