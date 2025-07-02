@@ -17,8 +17,8 @@ export default function Title() {
         </Motion>
         <Motion delay={0.3}>
           <h2>
-            <span className="title-strong">균형</span>과{" "}
-            <span className="title-strong">조화로움</span>을 추구하는
+            <span className="title-strong">소통</span>하고{" "}
+            <span className="title-strong">고민</span>하는
             <br />
             Frontend Engineer
           </h2>
