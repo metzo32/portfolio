@@ -6,9 +6,24 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 import NameTag from "@/components/NameTag";
 
 export const metadata: Metadata = {
-  title: "개발자 오세연입니다.",
-  description: "신입 프론트엔드 엔지니어 포트폴리오 페이지",
+  title: "Frontend Engineer 오세연입니다.",
+  description: "프론트엔드 엔지니어 포트폴리오 페이지",
+  openGraph: {
+    title: "Frontend Engineer 오세연입니다.",
+    description: "프론트엔드 엔지니어 포트폴리오 페이지",
+    url: "https://metzportfolio.vercel.app/", 
+    siteName: "FE 오세연 포트폴리오",
+    images: [
+      {
+        url: "/public/image/profile.jpg",  
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
 };
+
 
 export default function RootLayout({
   children,
