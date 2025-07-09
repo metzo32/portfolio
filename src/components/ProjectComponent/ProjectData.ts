@@ -1,12 +1,35 @@
-const projectData = [
+import { ProjectCardProps } from "../types/ProjectCardProps";
+
+const projectData: ProjectCardProps[] = [
+  {
+    git: "https://github.com/metzo32/be-apple",
+    team: true,
+    deployed: false,
+    url: "https://github.com/metzo32/be-apple",
+    thumbnail: "/videos/beApple_demo.webp",
+    title: "앱등이가되",
+    description: "원하는 사양에 따른 애플 제품 추천 및 보유 제품 기록 서비스",
+    text: "백엔드 API를 연동하여 비동기 데이터를 페칭했습니다##AccessToken을 기반으로 사용자 인증을 하고, 위시리스트와 보유 목록, 리뷰 등을 구현했습니다##구글 및 카카오톡 연동 로그인 기능을 추가했습니다##Tanstack Query를 도입해 비동기 데이터와 UI 상태 관리를 보다 효율적으로 개선했습니다##",
+    skills: [
+      "Next.js",
+      "Typescript",
+      "Tanstack Query",
+      "Zustand",
+      "Tailwind",
+      "MUI-Material UI",
+      "Lodash",
+      "Axios",
+    ],
+  },
   {
     git: "https://github.com/metzo32/arto",
+    team: false,
     deployed: true,
     url: "https://arto-steel.vercel.app/",
     thumbnail: "/videos/video_arto.gif",
     title: "Arto",
     description: "아티스트 포트폴리오 서칭 서비스",
-    text: "App router 기반의 Next.js를 활용하여 작가의 전시 이력, 주요 포트폴리오 및 작업 방향을 살펴볼 수 있는 서비스입니다. Firebase를 기반으로 사용자 인증 및 좋아요 기능을 구현하였습니다. 쿼리 스트링을 활용하여 동적 페이지를 생성하는 방식으로 검색 페이지를 완성했습니다.",
+    text: "App router 기반의 Next.js를 활용하여 작가의 전시 이력, 주요 포트폴리오 및 작업 방향을 살펴볼 수 있는 서비스입니다## Firebase를 기반으로 사용자 인증 및 좋아요 기능을 구현하였습니다## 쿼리 스트링을 활용하여 동적 페이지를 생성하는 방식으로 검색 페이지를 완성했습니다##",
     skills: [
       "Next.js",
       "Typescript",
@@ -17,12 +40,13 @@ const projectData = [
   },
   {
     git: "https://github.com/metzo32/plantic",
+    team: false,
     deployed: false,
     url: "https://github.com/metzo32/plantic",
     thumbnail: "/videos/video_plantic.webp",
     title: "Plantic",
     description: "실내 식물 정보 검색 서비스",
-    text: "공공 데이터 API를 활용한 실내 식물 검색 서비스입니다. 한글 및 영문 이름의 검색이 가능하고, 난이도를 비롯한 광도, 습도, 성장 속도에 따라 아이콘이 부여될 수 있도록 구현했습니다.",
+    text: "공공 데이터 API를 활용한 실내 식물 검색 서비스입니다## 한글 및 영문 이름의 검색이 가능하고, 난이도를 비롯한 광도, 습도, 성장 속도에 따라 아이콘이 부여될 수 있도록 구현했습니다##",
     skills: [
       "Typescript",
       "React",
@@ -34,12 +58,13 @@ const projectData = [
   },
   {
     git: "https://github.com/metzo32/tapttoo_gen",
+    team: false,
     deployed: true,
     url: "https://tapttoo.netlify.app/",
     thumbnail: "/videos/video_tapttoo.webp",
     title: "Tapttoo",
     description: "커스텀 타투 도안 제작 서비스",
-    text: "DALL-E API를 활용하여 유저가 작성한 프롬프트에 따라 타투 이미지를 생성해주는 서비스입니다.",
+    text: "DALL-E API를 활용하여 유저가 작성한 프롬프트에 따라 타투 이미지를 생성해주는 서비스입니다##",
     skills: [
       "Typescript",
       "React",
@@ -50,22 +75,24 @@ const projectData = [
   },
   {
     git: "https://github.com/metzo32/keyboard",
+    team: false,
     deployed: true,
     url: "https://checkkeyboardsound.netlify.app/",
     thumbnail: "/videos/video_keyboard.webp",
     title: "가상 키보드",
     description: "키보드 타건음 체크 서비스",
-    text: "키보드를 고를 때 타건음이 녹음 환경마다 다르다는 점을 개선하고자 웹 상에서 키보드를 테스트해 볼 수 있도록 했습니다. 실제 키와 매핑하여 타이핑이 가능하고, 각 키마다 오디오 객체를 활용하여 소리를 체크할 수 있습니다.",
+    text: "키보드를 고를 때 객관적인 타건음을 테스트할 수 있도록 각 키에 맞는 소리가 재생되는 키보드를 만들었습니다## 실제 키와 알맞는 위치에 오디오 객체와 키를 매핑하고, 연속되거나 동시에 입력되는 경우에도 유연하게 동작하도록 구현했습니다##",
     skills: ["Typescript", "React", "Tailwind"],
   },
   {
     git: "https://github.com/metzo32/mbtitest_ts",
+    team: false,
     deployed: true,
     url: "https://discordpizza.netlify.app/",
     thumbnail: "/videos/video_pizza.webp",
     title: "나는 어떤 피자일까?",
     description: "나의 MBTI와 어울리는 피자를 알려주는 테스트",
-    text: "MBTI 테스트 로직을 바탕으로 디스코드 친구들의 일화를 적용한 심리 테스트입니다.",
+    text: "MBTI 테스트 로직을 바탕으로 디스코드 친구들의 일화를 적용한 심리 테스트입니다##",
     skills: [
       "Typescript",
       "React",
@@ -76,13 +103,14 @@ const projectData = [
   },
   {
     git: "https://github.com/metzo32/numberGame",
+    team: false,
     deployed: false,
     url: "https://github.com/metzo32/numberGame",
     thumbnail: "/videos/video_numbergame.webp",
     title: "숫자 업다운 게임",
     description: "입력한 숫자를 프로그램이 맞춰나가는 게임",
-    text: "유저가 입력한 수를 업다운 방식으로 프로그램이 추측할 수 있도록 구현했습니다.",
-    skills: ["React-Native", "ngrok"],
+    text: "유저가 입력한 수를 업다운 방식으로 프로그램이 추측할 수 있도록 구현했습니다##",
+    skills: ["React-Native", "Expo", "ngrok"],
   },
 ];
 

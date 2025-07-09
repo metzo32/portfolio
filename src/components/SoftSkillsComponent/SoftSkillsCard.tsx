@@ -20,8 +20,13 @@ export default function SoftSkillsCard({
   const [isSelected, setIsSelected] = useState(initialSelected);
 
   const handleHover = () => {
-    setIsSelected(true); // 이부분 마우스 액션 말고 화면 진입에 따라 순차적 상태변화 시켜보자.
+    setIsSelected(true);
   };
+
+  const softSentence = text
+    .split(".")
+    .map((sen) => sen.trim())
+    .filter((sen) => sen.length > 0);
 
   return (
     <div
@@ -34,9 +39,23 @@ export default function SoftSkillsCard({
           <div className={`soft-icon-box ${isSelected ? "active" : ""}`}>
             {image}
           </div>
-          <h5 className={`soft-card-title ${isSelected ? "" : "invisible"}`}>{title}</h5>
-          <div>
-            <p className={`text-center ${isSelected ? "" : "invisible"}`}>{text}</p>
+          <h5 className={`soft-card-title ${isSelected ? "" : "invisible"}`}>
+            {title}
+          </h5>
+          <div className="flex flex-col gap-3">
+            {softSentence.map((sentence) => (
+              <div
+                key={sentence}
+                className={`flex gap-3 items-center ${
+                  isSelected ? "" : "invisible"
+                }`}
+              >
+                <span className="min-w-[5px] w-[5px] h-[5px] rounded-full bg-primary dark:bg-white" />
+                <p className={` ${isSelected ? "" : "invisible"}`}>
+                  {sentence}.
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

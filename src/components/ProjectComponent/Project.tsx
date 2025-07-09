@@ -10,6 +10,7 @@ export default function Project() {
           <ProjectCard
             git={data.git}
             url={data.url}
+            team={data.team}
             deployed={data.deployed}
             thumbnail={data.thumbnail}
             title={data.title}

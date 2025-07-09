@@ -10,9 +10,9 @@ export default function ContactText() {
             <p className="contact-ending">처음과 같은 마음으로 </p>
             <p>
               <span className="contact-ending strong">
-                사용자에게 더욱 기울이는 전달자
+                함께 일하고 싶은 동료
               </span>{" "}
-              ,{" "}
+              이자,{" "}
             </p>
             <p className="contact-ending">
               <span className="contact-ending strong">

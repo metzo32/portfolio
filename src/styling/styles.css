@@ -101,8 +101,8 @@
   }
 
   p {
-    @apply text-sm font-normal leading-6
-        lg:text-base;
+    @apply text-xs font-normal
+        lg:text-sm;
   }
 
   li {
@@ -127,7 +127,7 @@
   }
 
   .hide-smallview {
-    @apply hidden 
+    @apply hidden leading-tight
         md:block;
   }
 
@@ -170,10 +170,10 @@
   .skills-box {
     @apply w-auto px-3 py-2
         text-center
-        border-2 border-successLight rounded-md
+        border border-successLight rounded-md
         bg-successLight
 
-        md:py-1
+        lg:py-1
         
         dark:border-success
         dark:bg-transparent;
@@ -184,7 +184,7 @@
     text-sm font-extralight
     leading-none
 
-    md:text-lg
+    lg:text-lg
 
     dark:text-success;
   }
@@ -396,10 +396,7 @@
   }
 
   .soft-icon-box {
-    @apply h-[60px]
-    /* border border-blue-700 */
-    
-    text-4xl
+    @apply text-4xl
     md:text-6xl;
   }
 
@@ -524,7 +521,7 @@
   .section-semi-title {
     @apply w-[35%] 
     border-t-0 border-textColorLight
-    flex justify-end gap-1
+    flex justify-end gap-1 items-center
 
     md:w-[240px] md:border-t-2 md:pt-3
 
@@ -610,10 +607,9 @@
   .soft-card-container {
     @apply w-full pt-6
     
-        aspect-square
+        h-[420px]
         flex flex-col justify-between items-center
         bg-white
-        shadow-xl
         cursor-pointer select-none
         origin-bottom
         custom-trans
@@ -622,7 +618,9 @@
         hover:shadow-xl
 
         md:aspect-square
+        md:h-auto
         lg:aspect-square
+        lg:h-auto
         custom:aspect-golden-reverse
         
         dark:bg-secondary;
@@ -641,24 +639,21 @@
     @apply w-full h-full px-8 gap-3
     flex flex-col items-center
 
-    sm:gap-4
     md:gap-7
-    lg:gap-6
-    custom:gap-8;
+    lg:gap-6;
   }
 
   .soft-card-content {
     @apply h-full 
-    flex flex-col items-center justify-between 
-    
+    flex flex-col items-center 
+    gap-8
+
     md:h-[70%] 
     custom:h-[70%];
   }
 
   .soft-card-title {
-    @apply sm:text-2xl
-    lg:text-3xl
-    custom:text-2xl;
+    @apply whitespace-nowrap text-2xl;
   }
 
   .card-deact {
@@ -731,6 +726,7 @@
   .project-image-container {
     @apply w-full aspect-golden bg-blue-900
         mb-5
+        max-h-[333px]
 
         md:w-short md:aspect-golden
         md:mb-0;
@@ -995,8 +991,7 @@
   }
 
   .top-button-container {
-    @apply
-     fixed bottom-5 right-5 custom-trans
+    @apply fixed bottom-5 right-5 custom-trans
     flex flex-col items-center gap-5;
   }
 
@@ -1064,7 +1059,7 @@
   }
 
   .about-title {
-    @apply whitespace-break-spaces
+    @apply whitespace-break-spaces;
   }
 
   .about-text-box {
@@ -1073,16 +1068,20 @@
     md:gap-5;
   }
 
+  .about-p {
+    @apply leading-loose;
+  }
+
   .about-span {
-    @apply
-    text-base
+    @apply text-xs
+    lg:text-sm
     text-textColor
-    px-2 py-1
+    px-1 py-1
     bg-tertiaryLight
     rounded-sm
     whitespace-nowrap
 
-    dark:bg-surface
+    dark:bg-surface;
   }
 
   .dark-button {

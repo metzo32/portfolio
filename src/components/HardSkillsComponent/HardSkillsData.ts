@@ -5,6 +5,7 @@ import tsLogo from "../../assets/logos/logo_ts.png";
 
 import nextLogo from "../../assets/logos/logo_next.png";
 import reactLogo from "../../assets/logos/logo_react.png";
+import tanstackqueryLogo from "../../assets/logos/logo_tanstackquery.png";
 import reduxLogo from "../../assets/logos/logo_redux.png";
 import zustandLogo from "../../assets/logos/logo_zustand.png";
 import tailwindLogo from "../../assets/logos/logo_tailwind.png";
@@ -37,7 +38,7 @@ const hardSkillsData = [
         logo: cssLogo,
         alt: "CSS로고",
         title: "CSS",
-        text: "CSS만을 사용하여 레이아웃 구성 및 스타일링을 할 수 있습니다.",
+        text: "선택자와 우선순위에 대한 이해를 갖추었고, CSS만을 사용하여 레이아웃 구성 및 스타일링을 할 수 있습니다.",
       },
       {
         logo: jsLogo,
@@ -60,19 +61,25 @@ const hardSkillsData = [
         logo: nextLogo,
         alt: "Next로고",
         title: "Next.js",
-        text: "SSR, ISR 동적 라우팅 개발과 API Routes를 활용할 수 있으며, SEO 최적화를 할 수 있습니다.",
+        text: "SSR, ISR 동적 라우팅을 구현하고 API Routes를 활용할 수 있으며, SEO 최적화를 할 수 있습니다.",
       },
       {
         logo: reactLogo,
         alt: "React로고",
         title: "React",
-        text: "컴포넌트 기반의 UI를 설계하고 SPA 웹 애플리케이션 제작할 수 있습니다.",
+        text: "컴포넌트 기반의 UI를 설계하고, SPA 웹 애플리케이션을 제작할 수 있습니다.",
       },
       {
         logo: reactLogo,
         alt: "React로고",
         title: "React Native",
-        text: "Expo를 활용한 빠른 모바일 애플리케이션 프로토타이핑을 해보았습니다.",
+        text: "React Native와 Expo를 통해 빠르게 iOS와 Android 앱 프로토타이핑을 해보았습니다.",
+      },
+      {
+        logo: tanstackqueryLogo,
+        alt: "TanstackQuery로고",
+        title: "Tanstack Query",
+        text: "캐싱, 쿼리 무효화, 옵티미스틱 업데이트 등을 활용해 비동기 데이터와 UI 상태를 효과적으로 관리한 경험이 있습니다.",
       },
       {
         logo: reduxLogo,
@@ -137,7 +144,7 @@ const hardSkillsData = [
         logo: figmaLogo,
         alt: "Figma로고",
         title: "Figma",
-        text: "디자인 협업툴을 능숙하게 활용할 수 있습니다.",
+        text: "디자인 관련 협업 과정에서 능숙하게 활용할 수 있습니다.",
       },
       {
         logo: zbrushLogo,
@@ -160,7 +167,7 @@ const hardSkillsData = [
         logo: vercelLogo,
         alt: "Vercel로고",
         title: "Vercel",
-        text: "Next.js 기반의 프로젝트를 배포할 수 있고, 푸시 내역과 연동하여 지속적인 통합 및 배포(CI/CD) 프로세스를 갖출 수 있습니다.",
+        text: "Next.js 기반의 프로젝트를 배포할 수 있고, 푸시 내역과 연동하여 지속적인 통합 및 배포(CI/CD) 프로세스를 갖추었습니다.",
       },
       {
         logo: netlifyLogo,
@@ -172,7 +179,7 @@ const hardSkillsData = [
         logo: slackLogo,
         alt: "Slack로고",
         title: "Slack",
-        text: "팀 커뮤니케이션 도구로 활용합니다.",
+        text: "스레드에 대한 이해가 있고, 팀 커뮤니케이션 도구로 활용할 수 있습니다.",
       },
     ],
   },

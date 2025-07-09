@@ -30,7 +30,7 @@ export default function Title() {
             <span className="semi-title-strong">프론트엔드 개발자</span>
             입니다.
             <br />
-            <span className="semi-title-strong">적극적인 팀워크</span>와{" "}
+            <span className="semi-title-strong">적극적인 협업</span>와{" "}
             <span className="semi-title-strong">꾸준한 학습</span>을 지향합니다.
           </h3>
         </Motion>
