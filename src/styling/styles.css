@@ -62,7 +62,7 @@
   }
 
   h2 {
-    @apply text-2xl whitespace-nowrap
+    @apply text-xl whitespace-nowrap
         font-medium
 
         md:text-3xl
@@ -336,7 +336,7 @@
   }
 
   .nav-menu-container-col {
-    @apply w-[100px] h-[300px] mt-32
+    @apply w-[100px] h-[250px] mt-32
         flex flex-col justify-between items-center 
         fixed top-0 right-5 z-50;
   }
@@ -495,7 +495,6 @@
 
   .title-container {
     @apply w-full flex flex-col gap-5
-
         md:w-1/2 md:gap-10;
   }
 
@@ -572,8 +571,10 @@
 
   .semi-title-strong {
     @apply text-textColorLight
-    
-    dark:text-textColor;
+    text-base
+    sm:text-xl;
+
+    dark: text-textColor;
   }
 
   .icons-box {
@@ -604,11 +605,37 @@
         custom:grid-cols-4 custom:grid-rows-1;
   }
 
-  .soft-card-container {
-    @apply w-full pt-6
+  .soft-card-container-wide {
+    @apply 
+        hidden md:flex
+        w-full pt-6
     
         h-[420px]
-        flex flex-col justify-between items-center
+        flex-col justify-between items-center
+        bg-white
+        cursor-pointer select-none
+        origin-bottom
+        custom-trans
+
+        hover:scale-110
+        hover:shadow-xl
+
+        md:aspect-square
+        md:h-auto
+        lg:aspect-square
+        lg:h-auto
+        custom:aspect-golden-reverse
+        
+        dark:bg-secondary;
+  }
+
+    .soft-card-container-small {
+    @apply 
+        flex md:hidden
+        w-full pt-6
+    
+        h-[420px]
+        flex-col justify-between items-center
         bg-white
         cursor-pointer select-none
         origin-bottom
@@ -707,17 +734,17 @@
   }
 
   .project-grid {
-    @apply w-full;
+    @apply w-full grid grid-cols-1;
   }
 
   .project-card-wrapper {
-    @apply w-full
+    @apply w-full 
         flex flex-col
         mb-36;
   }
 
   .project-card-container {
-    @apply w-full
+    @apply w-full min-h-[200px]
         flex flex-col justify-between
 
         md:flex-row;
@@ -867,7 +894,7 @@
   }
 
   .contact-ending {
-    @apply text-base text-center
+    @apply text-sm text-center
 
     md:text-xl;
   }
@@ -884,6 +911,9 @@
     bg-textColorLight
 
     md:py-1 md:px-2
+
+    text-sm
+    md:text-xl
 
     dark:text-background
     dark:bg-textColor;
@@ -1059,11 +1089,13 @@
   }
 
   .about-title {
-    @apply whitespace-break-spaces;
+    @apply mb-3
+    md:m-0
+    whitespace-break-spaces;
   }
 
   .about-text-box {
-    @apply flex flex-col gap-2
+    @apply flex flex-col gap-3
 
     md:gap-5;
   }

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "../styling/styles.css";
-// import CursorFollower from "@/components/CursorFollower/CursorFollower";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
@@ -21,7 +20,6 @@ export default function RootLayout({
       <body>
         <div className="wrapper">
           <div className="wrapper-blur" />
-          {/* <CursorFollower /> */}
           <Header />
           {children}
           <ScrollToTopButton />

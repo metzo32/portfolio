@@ -1,17 +1,17 @@
 import { ReactNode } from "react";
-// import MotionWrapper from "./SectionMotion";
 import Motion from "./Animation/Motion";
 
 interface SectionProps {
   children?: ReactNode;
   title: string;
   num: string;
-  ref: React.RefObject<HTMLDivElement>
+  ref: React.RefObject<HTMLDivElement>;
 }
 
 export default function Section({ children, title, num, ref }: SectionProps) {
+
   return (
-     <Motion delay={0.3}>
+    <Motion delay={0.3}>
       <section className="section-wrapper" ref={ref}>
         <div className="section-title-container">
           <h2>{title}</h2>

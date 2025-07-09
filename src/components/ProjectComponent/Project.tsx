@@ -5,9 +5,10 @@ import projectData from "./ProjectData";
 export default function Project() {
   return (
     <div className="project-grid">
-      {projectData.map((data, index) => (
-        <Motion key={index} delay={0.3}>
+      <Motion delay={0.2}>
+        {projectData.map((data, index) => (
           <ProjectCard
+            key={index}
             git={data.git}
             url={data.url}
             team={data.team}
@@ -18,8 +19,8 @@ export default function Project() {
             text={data.text}
             skills={data.skills}
           />
-        </Motion>
-      ))}
+        ))}
+      </Motion>
     </div>
   );
 }

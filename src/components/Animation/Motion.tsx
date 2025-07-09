@@ -10,7 +10,7 @@ interface MotionProps {
 
 export default function Motion({ children, delay = 0 }: MotionProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   const mainControls = useAnimation()
 
