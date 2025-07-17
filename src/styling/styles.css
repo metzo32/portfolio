@@ -1064,7 +1064,7 @@
 
   .footer {
     @apply py-12
-    flex flex-col items-center gap-3;
+    flex flex-col items-center gap-1 md:gap-3;
   }
 
   .footer-item {
