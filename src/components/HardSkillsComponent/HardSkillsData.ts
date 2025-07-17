@@ -6,10 +6,12 @@ import tsLogo from "../../assets/logos/logo_ts.png";
 import nextLogo from "../../assets/logos/logo_next.png";
 import reactLogo from "../../assets/logos/logo_react.png";
 import tanstackqueryLogo from "../../assets/logos/logo_tanstackquery.png";
+import swrLogo from "../../assets/logos/logo_swr.png";
 import reduxLogo from "../../assets/logos/logo_redux.png";
 import zustandLogo from "../../assets/logos/logo_zustand.png";
 import tailwindLogo from "../../assets/logos/logo_tailwind.png";
 import styledComponentLogo from "../../assets/logos/logo_styledcomponent.png";
+import muiLogo from "../../assets/logos/logo_mui.png";
 import framerLogo from "../../assets/logos/logo_framermotion.png";
 import reactRouterLogo from "../../assets/logos/logo_reactrouterdom.png";
 import firebaseLogo from "../../assets/logos/logo_firebase.png";
@@ -82,6 +84,12 @@ const hardSkillsData = [
         text: "캐싱, 쿼리 무효화, 옵티미스틱 업데이트 등을 활용해 비동기 데이터와 UI 상태를 효과적으로 관리한 경험이 있습니다.",
       },
       {
+        logo: swrLogo,
+        alt: "SWR로고",
+        title: "SWR",
+        text: "데이터를 빠르고 효율적으로 가져오기 위해 캐싱, 리페칭 등 최적화된 데이터 패칭이 가능합니다",
+      },
+      {
         logo: reduxLogo,
         alt: "Redux로고",
         title: "Redux",
@@ -104,6 +112,12 @@ const hardSkillsData = [
         alt: "ST로고",
         title: "Styled Component",
         text: "컴포넌트 단위로 스타일을 캡슐화하고, props 기반으로 스타일을 동적으로 변경할 수 있습니다.",
+      },
+        {
+        logo: muiLogo,
+        alt: "MUI로고",
+        title: "MUI Material UI",
+        text: "디자인 프리셋을 유연하게 활용하고, 추가 커스터마이징으로 빠르게 컴포넌트 단위의 UI를 제작할 수 있습니다.",
       },
       {
         logo: framerLogo,

@@ -37,7 +37,7 @@ export default function SoftSkillsCard({
         <div className="soft-card-box">
           <h6 className="w-full">{num}</h6>
           <div className="soft-card-content">
-            <div className={`soft-icon-box ${isSelected ? "active" : ""}`}>
+            <div className={`soft-icon-box ${isSelected ? "active" : "deactivate"}`}>
               {image}
             </div>
             <h5 className={`soft-card-title ${isSelected ? "" : "invisible"}`}>
