@@ -87,7 +87,7 @@ const hardSkillsData = [
         logo: swrLogo,
         alt: "SWR로고",
         title: "SWR",
-        text: "데이터를 빠르고 효율적으로 가져오기 위해 캐싱, 리페칭 등 최적화된 데이터 패칭이 가능합니다",
+        text: "데이터를 빠르고 효율적으로 가져오기 위해 캐싱, 리페칭 등 최적화된 데이터 패칭이 가능합니다.",
       },
       {
         logo: reduxLogo,
