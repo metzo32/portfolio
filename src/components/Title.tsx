@@ -49,7 +49,7 @@ export default function Title() {
             </a>
             <a
               className="icons"
-              href="https://www.notion.so/Frontend-162aed31772380b78d59d2f5a25fab69?pvs=4"
+              href="https://dolomite-owner-2a3.notion.site/URL-162aed31772380e58621f8af2a5d47c5"
               target="_blank"
               rel="noopener noreferrer"
             >
