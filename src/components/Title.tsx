@@ -8,14 +8,14 @@ export default function Title() {
   return (
     <section className="title-wrapper">
       <div className="title-container">
-        <Motion delay={0.2}>
+        <Motion delay={0.1}>
           <div className="name-container">
             <h1 className="title-name">[</h1>
             <h1 className="title-name extra">오세연</h1>
             <h1 className="title-name">]</h1>
           </div>
         </Motion>
-        <Motion delay={0.3}>
+        <Motion delay={0.2}>
           <h2>
             <span className="title-strong">소통</span>하고{" "}
             <span className="title-strong">고민</span>하는
@@ -23,7 +23,7 @@ export default function Title() {
             Frontend Engineer
           </h2>
         </Motion>
-        <Motion delay={0.4}>
+        <Motion delay={0.3}>
           <h3 className="mild">
             <span className="semi-title-strong">Typescript</span>를 기반으로
             작업하는{" "}
@@ -34,10 +34,10 @@ export default function Title() {
             <span className="semi-title-strong">꾸준한 학습</span>을 지향합니다.
           </h3>
         </Motion>
-        <Motion delay={0.5}>
+        <Motion delay={0.4}>
           <MoreButton />
         </Motion>
-        <Motion delay={0.6}>
+        <Motion delay={0.5}>
           <div className="icons-box">
             <a
               className="icons"
